@@ -1,0 +1,661 @@
+/* =========================================================
+   NYLORA SAFARIS
+   GORILLA TREKKING
+   ========================================================= */
+
+.gorilla-page {
+  background: #f4f0e7;
+  color: #243c2c;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.gorilla-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.gorilla-hero {
+  position: relative;
+  min-height: 88vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gorilla-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 35, 24, 0.78) 0%,
+      rgba(15, 35, 24, 0.42) 48%,
+      rgba(15, 35, 24, 0.2) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 20, 13, 0.6),
+      transparent 55%
+    );
+}
+
+.gorilla-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(900px, calc(100% - 48px));
+  text-align: center;
+  color: #fff;
+  padding-top: 70px;
+}
+
+.gorilla-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #d4a85a;
+  margin-bottom: 24px;
+}
+
+.gorilla-hero-content h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 7vw, 6.8rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.gorilla-hero-content h1 em {
+  color: #e6d8b9;
+  font-style: italic;
+}
+
+.gorilla-hero-content p {
+  width: min(650px, 100%);
+  margin: 30px auto 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.gorilla-hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.gorilla-primary-btn,
+.gorilla-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.gorilla-primary-btn {
+  background: #d4a85a;
+  color: #17271d;
+}
+
+.gorilla-primary-btn:hover {
+  transform: translateY(-3px);
+  background: #e4bd76;
+}
+
+.gorilla-secondary-btn {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.gorilla-secondary-btn:hover {
+  transform: translateY(-3px);
+  border-color: #fff;
+}
+
+.gorilla-hero-location {
+  position: absolute;
+  z-index: 3;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  gap: 22px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.gorilla-intro {
+  padding: 130px 0;
+  background: #f4f0e7;
+}
+
+.gorilla-intro .gorilla-container {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 70px;
+}
+
+.gorilla-intro-label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  color: #6f816f;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+}
+
+.gorilla-intro-label span:first-child {
+  color: #a87c36;
+}
+
+.gorilla-intro-content {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 80px;
+}
+
+.gorilla-intro-content h2,
+.gorilla-section-heading h2,
+.golden-monkey-content h2,
+.gorilla-final-content h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  color: #294735;
+}
+
+.gorilla-intro-content h2 {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 1;
+}
+
+.gorilla-intro-content h2 em,
+.gorilla-section-heading h2 em,
+.golden-monkey-content h2 em,
+.gorilla-final-content h2 em {
+  font-style: italic;
+  color: #55745c;
+}
+
+.gorilla-intro-copy {
+  padding-top: 10px;
+}
+
+.gorilla-intro-copy p {
+  margin: 0 0 24px;
+  color: #607064;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   DESTINATION SECTION
+   ========================================================= */
+
+.gorilla-destination-section {
+  padding: 120px 0;
+  background: #e9e5d9;
+}
+
+.gorilla-section-heading {
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+
+.gorilla-section-heading > span {
+  display: block;
+  margin-bottom: 18px;
+  color: #a87c36;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.gorilla-section-heading h2 {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 1;
+}
+
+.gorilla-section-heading p {
+  max-width: 650px;
+  margin: 28px 0 0;
+  color: #607064;
+  line-height: 1.8;
+}
+
+.gorilla-destination-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.gorilla-destination-card {
+  overflow: hidden;
+  background: #f7f4ec;
+  border: 1px solid rgba(41, 71, 53, 0.1);
+}
+
+.gorilla-card-image {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.gorilla-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.gorilla-destination-card:hover .gorilla-card-image img {
+  transform: scale(1.05);
+}
+
+.gorilla-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(15, 35, 24, 0.5),
+    transparent 60%
+  );
+}
+
+.gorilla-card-number {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: #fff;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+}
+
+.gorilla-card-content {
+  padding: 34px;
+}
+
+.gorilla-card-country {
+  color: #a87c36;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.gorilla-card-content h3 {
+  margin: 14px 0 18px;
+  color: #294735;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.gorilla-card-content p {
+  margin: 0;
+  color: #657266;
+  line-height: 1.8;
+}
+
+.gorilla-card-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 30px 0;
+  padding: 20px 0;
+  border-top: 1px solid rgba(41, 71, 53, 0.12);
+  border-bottom: 1px solid rgba(41, 71, 53, 0.12);
+}
+
+.gorilla-card-details span {
+  display: block;
+  margin-bottom: 6px;
+  color: #879287;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+}
+
+.gorilla-card-details strong {
+  color: #294735;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.gorilla-card-link,
+.gorilla-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #294735;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-bottom: 1px solid #294735;
+  padding-bottom: 6px;
+}
+
+
+/* =========================================================
+   GOLDEN MONKEY
+   ========================================================= */
+
+.golden-monkey-section {
+  padding: 130px 0;
+  background: #294735;
+  color: #fff;
+}
+
+.golden-monkey-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.35fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.golden-monkey-content {
+  max-width: 680px;
+}
+
+.golden-monkey-content h2 {
+  color: #fff;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1;
+}
+
+.golden-monkey-content h2 em {
+  color: #d9d0b9;
+}
+
+.golden-monkey-content p {
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.9;
+}
+
+.gorilla-text-link {
+  margin-top: 15px;
+  color: #e1b968;
+  border-color: #e1b968;
+}
+
+.golden-monkey-stat {
+  padding-left: 40px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.golden-monkey-stat span {
+  display: block;
+  margin-bottom: 25px;
+  color: #d4a85a;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+}
+
+.golden-monkey-stat strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.golden-monkey-stat small {
+  display: block;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   WHY NYLORA
+   ========================================================= */
+
+.gorilla-why {
+  padding: 130px 0;
+  background: #f4f0e7;
+}
+
+.gorilla-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(41, 71, 53, 0.15);
+}
+
+.gorilla-feature {
+  padding: 35px 28px 20px 0;
+  border-right: 1px solid rgba(41, 71, 53, 0.15);
+  margin-right: 28px;
+}
+
+.gorilla-feature:last-child {
+  border-right: 0;
+}
+
+.gorilla-feature > span {
+  color: #a87c36;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+}
+
+.gorilla-feature h3 {
+  margin: 45px 0 15px;
+  color: #294735;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.gorilla-feature p {
+  margin: 0;
+  color: #687368;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.gorilla-final-cta {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    url("../assets/volcanoes.jpg")
+    center / cover no-repeat;
+  text-align: center;
+}
+
+.gorilla-final-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 39, 27, 0.7);
+}
+
+.gorilla-final-content {
+  position: relative;
+  z-index: 2;
+  width: min(720px, calc(100% - 48px));
+  color: #fff;
+}
+
+.gorilla-final-content > span {
+  color: #e0b665;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+}
+
+.gorilla-final-content h2 {
+  margin-top: 22px;
+  color: #fff;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1;
+}
+
+.gorilla-final-content h2 em {
+  color: #e2d6b8;
+}
+
+.gorilla-final-content p {
+  max-width: 580px;
+  margin: 28px auto 34px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .gorilla-intro .gorilla-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .gorilla-intro-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .gorilla-destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .golden-monkey-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .gorilla-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gorilla-feature:nth-child(2) {
+    border-right: 0;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .gorilla-container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .gorilla-hero {
+    min-height: 760px;
+  }
+
+  .gorilla-hero-content {
+    width: calc(100% - 32px);
+    padding-top: 50px;
+  }
+
+  .gorilla-hero-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .gorilla-hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .gorilla-hero-actions {
+    flex-direction: column;
+  }
+
+  .gorilla-primary-btn,
+  .gorilla-secondary-btn {
+    width: 100%;
+  }
+
+  .gorilla-hero-location {
+    left: 18px;
+    bottom: 20px;
+  }
+
+  .gorilla-intro,
+  .gorilla-destination-section,
+  .golden-monkey-section,
+  .gorilla-why {
+    padding: 85px 0;
+  }
+
+  .gorilla-card-image {
+    height: 330px;
+  }
+
+  .gorilla-card-content {
+    padding: 25px;
+  }
+
+  .gorilla-card-content h3 {
+    font-size: 2.1rem;
+  }
+
+  .gorilla-card-details {
+    grid-template-columns: 1fr;
+  }
+
+  .gorilla-features {
+    grid-template-columns: 1fr;
+  }
+
+  .gorilla-feature {
+    margin-right: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(41, 71, 53, 0.15);
+  }
+
+  .gorilla-feature:last-child {
+    border-bottom: 0;
+  }
+
+  .gorilla-final-cta {
+    min-height: 550px;
+  }
+
+}

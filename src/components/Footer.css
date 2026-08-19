@@ -1,178 +1,680 @@
-/* =========================
-   LUXURY SAFARI FOOTER
-   Engeya Luxury Safaris
-========================= */
+/* =========================================================
+   NYLORA SAFARIS
+   PREMIUM FOOTER
+   ========================================================= */
 
-.footer {
-  background: linear-gradient(135deg, #0b0f14, #111827);
-  color: #f5f5f5;
-  padding: 80px 20px 30px;
-  font-family: "Inter", sans-serif;
-  border-top: 1px solid rgba(255, 215, 0, 0.08);
+.nylora-footer {
+  position: relative;
+  background: #173b2d;
+  color: #f5f0e6;
+  overflow: hidden;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.footer-container {
+  width: min(1380px, calc(100% - 80px));
+  margin: 0 auto;
 }
 
-/* GRID */
-.footer-grid {
+
+/* =========================================================
+   MAIN FOOTER
+   ========================================================= */
+
+.nylora-footer-main {
+  padding: 95px 0 80px;
+  border-bottom: 1px solid rgba(245, 240, 230, 0.12);
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.nylora-footer-main .footer-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 40px;
+  grid-template-columns:
+    minmax(280px, 1.7fr)
+    minmax(150px, 1fr)
+    minmax(150px, 1fr)
+    minmax(230px, 1.2fr);
+
+  gap: 70px;
 }
 
-/* BRAND */
-.footer-brand h2 {
-  font-size: 22px;
-  letter-spacing: 2px;
-  color: #d4af37; /* luxury gold */
-  margin-bottom: 10px;
+
+/* =========================================================
+   BRAND / INTRO
+   ========================================================= */
+
+.footer-intro {
+  max-width: 390px;
 }
 
-.footer-brand p {
-  color: #b5b5b5;
-  font-size: 14px;
-  line-height: 1.6;
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+
+  text-decoration: none;
+  color: #f5f0e6;
+
+  margin-bottom: 28px;
 }
 
-.footer-brand .tagline {
-  margin-top: 15px;
-  color: #9ca3af;
-  font-size: 13px;
-  line-height: 1.8;
-}
+.footer-logo-mark {
+  width: 44px;
+  height: 44px;
 
-/* HEADINGS */
-.footer-links h3,
-.footer-cta h3 {
-  font-size: 15px;
-  color: #d4af37;
-  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(245, 240, 230, 0.45);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.25rem;
+
   letter-spacing: 1px;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.footer-logo-text strong {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.55rem;
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+}
+
+.footer-logo-text small {
+  margin-top: 7px;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 4px;
+
+  color: #d9c9a4;
+}
+
+
+/* =========================================================
+   INTRO TEXT
+   ========================================================= */
+
+.footer-intro-text {
+  margin: 0;
+
+  max-width: 380px;
+
+  color: rgba(245, 240, 230, 0.72);
+
+  font-size: 0.94rem;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   PLAN BUTTON
+   ========================================================= */
+
+.footer-plan-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 32px;
+
+  padding: 14px 21px;
+
+  border: 1px solid rgba(217, 201, 164, 0.5);
+
+  color: #f5f0e6;
+
+  text-decoration: none;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-plan-button svg {
+  font-size: 16px;
+
+  transition: transform 0.3s ease;
+}
+
+.footer-plan-button:hover {
+  background: #d9c9a4;
+
+  color: #173b2d;
+
+  border-color: #d9c9a4;
+
+  transform: translateY(-2px);
+}
+
+.footer-plan-button:hover svg {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+   ========================================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/* =========================================================
+   COLUMN LABEL
+   ========================================================= */
+
+.footer-column-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #d9c9a4;
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   COLUMN LINKS
+   ========================================================= */
+
+.footer-column a:not(.footer-contact-link) {
+  position: relative;
+
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-bottom: 14px;
+
+  color: rgba(245, 240, 230, 0.75);
+
+  text-decoration: none;
+
+  font-size: 0.88rem;
+
+  line-height: 1.5;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-column a:not(.footer-contact-link)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -3px;
+
+  width: 0;
+  height: 1px;
+
+  background: #d9c9a4;
+
+  transition: width 0.3s ease;
+}
+
+.footer-column a:not(.footer-contact-link):hover {
+  color: #f5f0e6;
+
+  transform: translateX(3px);
+}
+
+.footer-column a:not(.footer-contact-link):hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   CONTACT COLUMN
+   ========================================================= */
+
+.footer-contact p {
+  max-width: 270px;
+
+  margin: 0 0 23px;
+
+  color: rgba(245, 240, 230, 0.68);
+
+  font-size: 0.86rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CONTACT LINKS
+   ========================================================= */
+
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 15px;
+
+  color: #f5f0e6;
+
+  text-decoration: none;
+
+  font-size: 0.88rem;
+
+  transition: color 0.25s ease;
+}
+
+.footer-contact-link svg {
+  color: #d9c9a4;
+
+  font-size: 15px;
+
+  flex-shrink: 0;
+}
+
+.footer-contact-link:hover {
+  color: #d9c9a4;
+}
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.footer-location {
+  margin-top: 8px;
+
+  color: #d9c9a4;
+
+  font-size: 0.67rem;
+
+  letter-spacing: 1.5px;
+
   text-transform: uppercase;
 }
 
-/* LINKS */
-.footer-links a {
-  display: block;
-  color: #cbd5e1;
-  text-decoration: none;
-  margin-bottom: 10px;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  position: relative;
+
+/* =========================================================
+   STATEMENT
+   ========================================================= */
+
+.footer-statement {
+  padding: 45px 0;
 }
 
-.footer-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0%;
-  height: 1px;
-  background: #d4af37;
-  transition: 0.3s;
-}
-
-.footer-links a:hover {
-  color: #ffffff;
-}
-
-.footer-links a:hover::after {
-  width: 60%;
-}
-
-/* CONTACT TEXT */
-.footer-links p {
-  color: #9ca3af;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-/* CTA BOX */
-.footer-cta {
-  background: rgba(212, 175, 55, 0.06);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-  padding: 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(6px);
-}
-
-.footer-cta p {
-  font-size: 13px;
-  color: #cbd5e1;
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-/* BUTTON */
-.footer-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #d4af37, #b8860b);
-  color: #0b0f14;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
-}
-
-.footer-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.25);
-}
-
-/* BOTTOM BAR */
-.footer-bottom {
-  margin-top: 60px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+.footer-statement .footer-container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-statement-line {
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(245, 240, 230, 0.12);
+}
+
+.footer-statement-content {
+  flex-shrink: 0;
+
+  text-align: center;
+}
+
+.footer-statement-content span {
+  display: block;
+
+  color: #d9c9a4;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.footer-statement-content p {
+  margin: 8px 0 0;
+
+  color: rgba(245, 240, 230, 0.58);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 0.9rem;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+  background: #123126;
+
+  border-top: 1px solid rgba(245, 240, 230, 0.07);
+}
+
+.footer-bottom-inner {
+  min-height: 80px;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+   ========================================================= */
+
+.footer-copyright {
+  display: flex;
   flex-wrap: wrap;
+
+  gap: 6px;
+
+  color: rgba(245, 240, 230, 0.48);
+
+  font-size: 0.67rem;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   SOCIAL
+   ========================================================= */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-.footer-bottom p {
-  font-size: 12px;
-  color: #9ca3af;
-}
+.footer-socials a {
+  width: 34px;
+  height: 34px;
 
-.footer-bottom a {
-  color: #d4af37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(245, 240, 230, 0.14);
+
+  color: rgba(245, 240, 230, 0.7);
+
   text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
 }
 
-.footer-bottom a:hover {
-  text-decoration: underline;
+.footer-socials a:hover {
+  color: #173b2d;
+
+  background: #d9c9a4;
+
+  border-color: #d9c9a4;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
 
-@media (max-width: 1024px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* =========================================================
+   POWERED BY
+   ========================================================= */
+
+.footer-powered {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: rgba(245, 240, 230, 0.4);
+
+  font-size: 0.64rem;
+
+  letter-spacing: 0.4px;
+}
+
+.footer-powered a {
+  color: #d9c9a4;
+
+  text-decoration: none;
+
+  font-size: 0.67rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1.4px;
+
+  transition: color 0.25s ease;
+}
+
+.footer-powered a:hover {
+  color: #f5f0e6;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .footer-container {
+    width: min(100% - 50px, 1380px);
   }
+
+  .nylora-footer-main .footer-container {
+    grid-template-columns:
+      1.5fr
+      1fr
+      1fr;
+
+    gap: 55px;
+  }
+
+  .footer-intro {
+    grid-column: 1 / -1;
+
+    max-width: 600px;
+  }
+
+  .footer-intro-text {
+    max-width: 600px;
+  }
+
+  .footer-bottom-inner {
+    grid-template-columns: 1fr auto;
+  }
+
+  .footer-socials {
+    justify-content: flex-end;
+  }
+
+  .footer-powered {
+    grid-column: 1 / -1;
+
+    justify-content: flex-start;
+
+    padding-bottom: 20px;
+  }
+
 }
 
-@media (max-width: 600px) {
-  .footer-grid {
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .footer-container {
+    width: calc(100% - 40px);
+  }
+
+  .nylora-footer-main {
+    padding: 65px 0 55px;
+  }
+
+  .nylora-footer-main .footer-container {
     grid-template-columns: 1fr;
-    gap: 25px;
+
+    gap: 45px;
   }
 
-  .footer {
-    padding: 60px 15px 20px;
+  .footer-intro {
+    grid-column: auto;
   }
 
-  .footer-bottom {
+  .footer-intro-text {
+    font-size: 0.88rem;
+
+    line-height: 1.8;
+  }
+
+  .footer-column-label {
+    margin-bottom: 18px;
+  }
+
+  .footer-column a:not(.footer-contact-link) {
+    margin-bottom: 12px;
+  }
+
+  .footer-statement {
+    padding: 35px 0;
+  }
+
+  .footer-statement .footer-container {
+    gap: 15px;
+  }
+
+  .footer-statement-line {
+    display: none;
+  }
+
+  .footer-statement-content {
+    width: 100%;
+  }
+
+  .footer-statement-content span {
+    font-size: 0.56rem;
+
+    letter-spacing: 2px;
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+
     flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 25px 0;
+  }
+
+  .footer-copyright {
+    justify-content: center;
+
     text-align: center;
   }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-powered {
+    justify-content: center;
+
+    padding: 0;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .footer-logo-text strong {
+    font-size: 1.3rem;
+
+    letter-spacing: 3px;
+  }
+
+  .footer-logo-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-plan-button {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .footer-contact-link {
+    font-size: 0.82rem;
+  }
+
 }

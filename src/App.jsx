@@ -3,79 +3,135 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-/* ================= PAGES ================= */
 import Home from "./pages/Home";
-import Itineraries from "./pages/Itineraries";
-import Destinations from "./pages/Destinations";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Gallery from "./pages/Gallery";
-import TravelGuide from "./pages/TravelGuide";
+import Safaris from "./pages/Safaris";
+import Destinations from "./pages/Destinations";
+import Uganda from "./pages/Uganda";
+import Rwanda from "./pages/Rwanda";
 import Booking from "./pages/Booking";
-import PlanMySafari from "./pages/PlanMySafari";
-import TourPage from "./pages/TourPage";
-
-/* ================= ADMIN ================= */
-import Admin from "./pages/Admin";
-import AdminLogin from "./pages/AdminLogin";
-import ProtectedRoute from "./components/ProtectedRoute";
+import GorillaTrekking from "./pages/GorillaTrekking";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    <>
+    <div className="app">
+
+      {/* =====================================================
+          NAVIGATION
+      ===================================================== */}
+
       <Navbar />
 
-      <Routes>
 
-        {/* ================= HOME ================= */}
-        <Route path="/" element={<Home />} />
+      {/* =====================================================
+          PAGE CONTENT
+      ===================================================== */}
 
-        {/* ================= ITINERARIES LIST ================= */}
-        <Route path="/itineraries" element={<Itineraries />} />
+      <main>
 
-        {/* ================= TOUR SEO PAGE ================= */}
-        <Route path="/itineraries/:region/:slug" element={<TourPage />} />
+        <Routes>
 
-        {/* ================= BOOKING ================= */}
-        <Route path="/booking" element={<Booking />} />
+          {/* =================================================
+              HOME
+          ================================================= */}
 
-        {/* (OPTIONAL FUTURE UPGRADE - ID BASED BOOKING) */}
-        <Route path="/booking/:tourId" element={<Booking />} />
+          <Route
+            path="/"
+            element={<Home />}
+          />
 
-        {/* ================= AI SAFARI PLANNER ================= */}
-        <Route path="/plan-my-safari" element={<PlanMySafari />} />
 
-        {/* ================= DESTINATIONS ================= */}
-        <Route path="/destinations" element={<Destinations />} />
+          {/* =================================================
+              ABOUT
+          ================================================= */}
 
-        {/* ================= ABOUT ================= */}
-        <Route path="/about" element={<About />} />
+          <Route
+            path="/about"
+            element={<About />}
+          />
 
-        {/* ================= CONTACT ================= */}
-        <Route path="/contact" element={<Contact />} />
 
-        {/* ================= GALLERY ================= */}
-        <Route path="/gallery" element={<Gallery />} />
+          {/* =================================================
+              SAFARIS
+          ================================================= */}
 
-        {/* ================= TRAVEL GUIDE ================= */}
-        <Route path="/travel-guide" element={<TravelGuide />} />
+          <Route
+            path="/safaris"
+            element={<Safaris />}
+          />
 
-        {/* ================= ADMIN LOGIN ================= */}
-        <Route path="/admin-login" element={<AdminLogin />} />
 
-        {/* ================= ADMIN DASHBOARD ================= */}
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <Admin />
-            </ProtectedRoute>
-          }
-        />
+          {/* =================================================
+              DESTINATIONS
+          ================================================= */}
 
-      </Routes>
+          <Route
+            path="/destinations"
+            element={<Destinations />}
+          />
+
+
+          {/* =================================================
+              UGANDA
+          ================================================= */}
+
+          <Route
+            path="/destinations/uganda"
+            element={<Uganda />}
+          />
+
+
+          {/* =================================================
+              RWANDA
+          ================================================= */}
+
+          <Route
+            path="/destinations/rwanda"
+            element={<Rwanda />}
+          />
+
+
+          {/* =================================================
+              GORILLA & GOLDEN MONKEY TREKKING
+          ================================================= */}
+
+          <Route
+            path="/gorilla-trekking"
+            element={<GorillaTrekking />}
+          />
+
+
+          {/* =================================================
+              BOOKING
+          ================================================= */}
+
+          <Route
+            path="/booking"
+            element={<Booking />}
+          />
+
+
+          {/* =================================================
+              CONTACT
+          ================================================= */}
+
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+
+        </Routes>
+
+      </main>
+
+
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
 
       <Footer />
-    </>
+
+    </div>
   );
 }

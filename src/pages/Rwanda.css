@@ -1,0 +1,829 @@
+/* =========================================================
+   NYLORA SAFARIS
+   RWANDA DESTINATION PAGE
+========================================================= */
+
+.rwanda-page {
+  --rwanda-green: #173f2a;
+  --rwanda-deep: #102d20;
+  --rwanda-army: #4f6345;
+  --rwanda-forest: #234b35;
+  --rwanda-ivory: #f4f0e6;
+  --rwanda-white: #fbfaf6;
+  --rwanda-sand: #d9c7a0;
+  --rwanda-gold: #b79658;
+  --rwanda-text: #1e2a23;
+  --rwanda-muted: #687168;
+
+  background: var(--rwanda-white);
+  color: var(--rwanda-text);
+  overflow: hidden;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.rwanda-container {
+  width: min(1240px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.rwanda-hero {
+  min-height: 88vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.rwanda-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rwanda-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7,24,16,0.78),
+      rgba(7,24,16,0.25) 60%,
+      rgba(7,24,16,0.08)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7,24,16,0.65),
+      transparent 55%
+    );
+}
+
+.rwanda-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(850px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 0 0 110px;
+  color: white;
+}
+
+.rwanda-hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+}
+
+.rwanda-hero-kicker span {
+  width: 35px;
+  height: 1px;
+  background: rgba(255,255,255,0.7);
+}
+
+.rwanda-hero-content h1 {
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0.88;
+  font-weight: 300;
+  letter-spacing: -0.055em;
+}
+
+.rwanda-hero-content h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.rwanda-hero-content > p {
+  max-width: 620px;
+  margin: 35px 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.86);
+}
+
+.rwanda-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.rwanda-primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 22px;
+  background: var(--rwanda-green);
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.rwanda-primary-button:hover {
+  background: var(--rwanda-deep);
+  transform: translateY(-2px);
+}
+
+.rwanda-primary-button svg {
+  transition: transform 0.3s ease;
+}
+
+.rwanda-primary-button:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.rwanda-text-link {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rwanda-text-link span {
+  transition: transform 0.3s ease;
+}
+
+.rwanda-text-link:hover span {
+  transform: translateY(4px);
+}
+
+.rwanda-hero-caption {
+  position: absolute;
+  z-index: 3;
+  right: 40px;
+  bottom: 50px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  color: white;
+}
+
+.rwanda-hero-caption > span {
+  color: var(--rwanda-sand);
+  font-size: 12px;
+}
+
+.rwanda-hero-caption p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.rwanda-introduction {
+  padding: 140px 0;
+  background: var(--rwanda-white);
+}
+
+.rwanda-intro-grid {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.rwanda-intro-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.rwanda-intro-label span {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--rwanda-army);
+  font-weight: 700;
+}
+
+.rwanda-intro-label div {
+  width: 45px;
+  height: 1px;
+  margin-top: 6px;
+  background: var(--rwanda-gold);
+}
+
+.rwanda-intro-content {
+  max-width: 850px;
+}
+
+.rwanda-eyebrow {
+  color: var(--rwanda-green);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 15px;
+}
+
+.rwanda-intro-content h2 {
+  color: var(--rwanda-green);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.98;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  margin: 0 0 35px;
+}
+
+.rwanda-intro-content h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.rwanda-lead {
+  color: var(--rwanda-green);
+  font-size: 21px !important;
+  line-height: 1.6 !important;
+  max-width: 700px;
+}
+
+.rwanda-intro-content p:not(.rwanda-eyebrow):not(.rwanda-lead) {
+  color: var(--rwanda-muted);
+  max-width: 750px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.rwanda-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  color: var(--rwanda-green);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--rwanda-green);
+  padding-bottom: 6px;
+}
+
+/* =========================================================
+   FACTS
+========================================================= */
+
+.rwanda-facts {
+  background: var(--rwanda-ivory);
+  border-top: 1px solid rgba(23,63,42,0.1);
+  border-bottom: 1px solid rgba(23,63,42,0.1);
+}
+
+.rwanda-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.rwanda-fact {
+  padding: 45px 30px;
+  border-right: 1px solid rgba(23,63,42,0.12);
+}
+
+.rwanda-fact:last-child {
+  border-right: none;
+}
+
+.rwanda-fact svg {
+  color: var(--rwanda-gold);
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+
+.rwanda-fact strong {
+  display: block;
+  color: var(--rwanda-green);
+  font-size: 42px;
+  font-weight: 300;
+}
+
+.rwanda-fact span {
+  color: var(--rwanda-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.rwanda-experiences,
+.rwanda-lodges {
+  padding: 140px 0;
+}
+
+.rwanda-experiences {
+  background: var(--rwanda-white);
+}
+
+.rwanda-lodges {
+  background: var(--rwanda-ivory);
+}
+
+.rwanda-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.rwanda-section-kicker {
+  display: block;
+  color: var(--rwanda-army);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 17px;
+}
+
+.rwanda-section-heading h2 {
+  color: var(--rwanda-green);
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
+
+.rwanda-section-heading h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.rwanda-section-heading > p {
+  max-width: 380px;
+  color: var(--rwanda-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   EXPERIENCE CARDS
+========================================================= */
+
+.rwanda-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px 35px;
+}
+
+.rwanda-experience-card {
+  min-width: 0;
+}
+
+.rwanda-experience-image {
+  height: 520px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rwanda-experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.rwanda-experience-card:hover img {
+  transform: scale(1.045);
+}
+
+.rwanda-experience-number {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  color: white;
+  font-size: 11px;
+}
+
+.rwanda-experience-content {
+  padding: 25px 5px;
+}
+
+.rwanda-experience-content > span {
+  color: var(--rwanda-army);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.rwanda-experience-content h3 {
+  color: var(--rwanda-green);
+  font-size: 28px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.rwanda-experience-content p {
+  color: var(--rwanda-muted);
+  line-height: 1.75;
+  font-size: 14px;
+  max-width: 550px;
+}
+
+.rwanda-experience-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--rwanda-green);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.rwanda-feature {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 720px;
+  background: var(--rwanda-deep);
+}
+
+.rwanda-feature-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 90px 9%;
+  color: white;
+}
+
+.rwanda-feature-content .rwanda-section-kicker {
+  color: var(--rwanda-sand);
+}
+
+.rwanda-feature-eyebrow {
+  color: var(--rwanda-sand);
+  font-size: 17px;
+  margin: 15px 0;
+}
+
+.rwanda-feature-content h2 {
+  margin: 0 0 30px;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.98;
+  font-weight: 300;
+}
+
+.rwanda-feature-content h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.rwanda-feature-content > p:not(.rwanda-feature-eyebrow) {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 520px;
+}
+
+.rwanda-feature-content .rwanda-primary-button {
+  align-self: flex-start;
+  margin-top: 25px;
+  background: var(--rwanda-sand);
+  color: var(--rwanda-deep);
+}
+
+.rwanda-feature-image {
+  min-height: 600px;
+}
+
+.rwanda-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   LODGES
+========================================================= */
+
+.rwanda-lodge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.rwanda-lodge-card {
+  background: var(--rwanda-white);
+}
+
+.rwanda-lodge-image {
+  height: 390px;
+  overflow: hidden;
+}
+
+.rwanda-lodge-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.rwanda-lodge-card:hover .rwanda-lodge-image img {
+  transform: scale(1.04);
+}
+
+.rwanda-lodge-content {
+  padding: 25px 25px 30px;
+}
+
+.rwanda-lodge-content > span {
+  color: var(--rwanda-army);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.rwanda-lodge-content h3 {
+  color: var(--rwanda-green);
+  font-size: 26px;
+  font-weight: 400;
+  margin: 9px 0;
+}
+
+.rwanda-lodge-content p {
+  color: var(--rwanda-muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.rwanda-journey {
+  padding: 140px 0;
+  background: var(--rwanda-white);
+}
+
+.rwanda-journey-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 100px;
+}
+
+.rwanda-journey-grid h2 {
+  color: var(--rwanda-green);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.rwanda-journey-grid h2 em {
+  font-family: Georgia, serif;
+}
+
+.rwanda-journey-list {
+  border-top: 1px solid rgba(23,63,42,0.18);
+}
+
+.rwanda-journey-list > div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(23,63,42,0.18);
+}
+
+.rwanda-journey-list span {
+  color: var(--rwanda-gold);
+  font-size: 11px;
+}
+
+.rwanda-journey-list strong {
+  color: var(--rwanda-green);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.rwanda-journey-list p {
+  grid-column: 2;
+  color: var(--rwanda-muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 6px 0 0;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.rwanda-final-cta {
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    url("../assets/volcanoes.jpg")
+    center / cover no-repeat;
+}
+
+.rwanda-final-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16,45,32,0.7);
+}
+
+.rwanda-final-cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 850px;
+  padding: 80px 25px;
+}
+
+.rwanda-final-cta-content > span {
+  color: var(--rwanda-sand);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.rwanda-final-cta-content h2 {
+  margin: 25px 0;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.9;
+  font-weight: 300;
+  letter-spacing: -0.05em;
+}
+
+.rwanda-final-cta-content h2 em {
+  font-family: Georgia, serif;
+}
+
+.rwanda-final-cta-content p {
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.rwanda-light-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  color: var(--rwanda-green);
+  text-decoration: none;
+  padding: 16px 24px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .rwanda-container {
+    width: min(100% - 40px, 700px);
+  }
+
+  .rwanda-hero-content {
+    width: calc(100% - 40px);
+  }
+
+  .rwanda-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .rwanda-facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rwanda-fact:nth-child(2) {
+    border-right: none;
+  }
+
+  .rwanda-section-heading {
+    display: block;
+  }
+
+  .rwanda-section-heading > p {
+    margin-top: 25px;
+  }
+
+  .rwanda-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .rwanda-feature-image {
+    height: 500px;
+    min-height: 0;
+  }
+
+  .rwanda-journey-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .rwanda-lodge-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rwanda-lodge-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .rwanda-container {
+    width: calc(100% - 30px);
+  }
+
+  .rwanda-hero-content {
+    width: calc(100% - 30px);
+    padding-bottom: 75px;
+  }
+
+  .rwanda-hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .rwanda-hero-content > p {
+    font-size: 15px;
+  }
+
+  .rwanda-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .rwanda-hero-caption {
+    display: none;
+  }
+
+  .rwanda-introduction,
+  .rwanda-experiences,
+  .rwanda-lodges,
+  .rwanda-journey {
+    padding: 90px 0;
+  }
+
+  .rwanda-facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rwanda-fact {
+    padding: 30px 15px;
+  }
+
+  .rwanda-fact strong {
+    font-size: 32px;
+  }
+
+  .rwanda-experience-grid,
+  .rwanda-lodge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rwanda-experience-image {
+    height: 420px;
+  }
+
+  .rwanda-lodge-image {
+    height: 300px;
+  }
+
+  .rwanda-lodge-card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .rwanda-feature-content {
+    padding: 75px 25px;
+  }
+
+  .rwanda-final-cta {
+    min-height: 560px;
+  }
+}

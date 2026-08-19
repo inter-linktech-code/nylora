@@ -1,0 +1,823 @@
+/* =========================================================
+   NYLORA SAFARIS
+   UGANDA DESTINATION PAGE
+========================================================= */
+
+.uganda-page {
+  --uganda-green: #173f2a;
+  --uganda-deep: #102d20;
+  --uganda-army: #4f6345;
+  --uganda-forest: #234b35;
+  --uganda-ivory: #f4f0e6;
+  --uganda-white: #fbfaf6;
+  --uganda-sand: #d9c7a0;
+  --uganda-gold: #b79658;
+  --uganda-text: #1e2a23;
+  --uganda-muted: #687168;
+
+  background: var(--uganda-white);
+  color: var(--uganda-text);
+  overflow: hidden;
+}
+
+.uganda-container {
+  width: min(1240px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.uganda-hero {
+  min-height: 88vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.uganda-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uganda-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 24, 16, 0.76),
+      rgba(7, 24, 16, 0.25) 60%,
+      rgba(7, 24, 16, 0.08)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(7, 24, 16, 0.65),
+      transparent 50%
+    );
+}
+
+.uganda-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(850px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 0 0 110px;
+  color: white;
+}
+
+.uganda-hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+}
+
+.uganda-hero-kicker span {
+  width: 35px;
+  height: 1px;
+  background: rgba(255,255,255,0.7);
+}
+
+.uganda-hero-content h1 {
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0.88;
+  font-weight: 300;
+  letter-spacing: -0.055em;
+}
+
+.uganda-hero-content h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.uganda-hero-content > p {
+  max-width: 620px;
+  margin: 35px 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.86);
+}
+
+.uganda-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.uganda-primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 22px;
+  background: var(--uganda-green);
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.uganda-primary-button svg {
+  transition: transform 0.3s ease;
+}
+
+.uganda-primary-button:hover {
+  background: var(--uganda-deep);
+  transform: translateY(-2px);
+}
+
+.uganda-primary-button:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.uganda-text-link {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.uganda-text-link span {
+  transition: transform 0.3s ease;
+}
+
+.uganda-text-link:hover span {
+  transform: translateY(4px);
+}
+
+.uganda-hero-caption {
+  position: absolute;
+  z-index: 3;
+  right: 40px;
+  bottom: 50px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  color: white;
+}
+
+.uganda-hero-caption > span {
+  color: var(--uganda-sand);
+  font-size: 12px;
+}
+
+.uganda-hero-caption p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.uganda-introduction {
+  padding: 140px 0;
+  background: var(--uganda-white);
+}
+
+.uganda-intro-grid {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.uganda-intro-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.uganda-intro-label span {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--uganda-army);
+  font-weight: 700;
+}
+
+.uganda-intro-label div {
+  width: 45px;
+  height: 1px;
+  margin-top: 6px;
+  background: var(--uganda-gold);
+}
+
+.uganda-intro-content {
+  max-width: 850px;
+}
+
+.uganda-eyebrow {
+  color: var(--uganda-green);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 15px;
+}
+
+.uganda-intro-content h2 {
+  color: var(--uganda-green);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.98;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  margin: 0 0 35px;
+}
+
+.uganda-intro-content h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.uganda-lead {
+  color: var(--uganda-green);
+  font-size: 21px !important;
+  line-height: 1.6 !important;
+  max-width: 700px;
+}
+
+.uganda-intro-content p:not(.uganda-eyebrow):not(.uganda-lead) {
+  color: var(--uganda-muted);
+  max-width: 750px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.uganda-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  color: var(--uganda-green);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--uganda-green);
+  padding-bottom: 6px;
+}
+
+.uganda-inline-link svg {
+  transition: transform 0.3s ease;
+}
+
+.uganda-inline-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   FACTS
+========================================================= */
+
+.uganda-facts {
+  background: var(--uganda-ivory);
+  border-top: 1px solid rgba(23,63,42,0.1);
+  border-bottom: 1px solid rgba(23,63,42,0.1);
+}
+
+.uganda-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.uganda-fact {
+  padding: 45px 30px;
+  border-right: 1px solid rgba(23,63,42,0.12);
+}
+
+.uganda-fact:last-child {
+  border-right: none;
+}
+
+.uganda-fact svg {
+  color: var(--uganda-gold);
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+
+.uganda-fact strong {
+  display: block;
+  color: var(--uganda-green);
+  font-size: 42px;
+  font-weight: 300;
+}
+
+.uganda-fact span {
+  color: var(--uganda-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.uganda-experiences,
+.uganda-lodges {
+  padding: 140px 0;
+}
+
+.uganda-experiences {
+  background: var(--uganda-white);
+}
+
+.uganda-lodges {
+  background: var(--uganda-ivory);
+}
+
+.uganda-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.uganda-section-kicker {
+  display: block;
+  color: var(--uganda-army);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 17px;
+}
+
+.uganda-section-heading h2 {
+  color: var(--uganda-green);
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+}
+
+.uganda-section-heading h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.uganda-section-heading > p {
+  max-width: 380px;
+  color: var(--uganda-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   EXPERIENCE CARDS
+========================================================= */
+
+.uganda-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px 35px;
+}
+
+.uganda-experience-card {
+  min-width: 0;
+}
+
+.uganda-experience-image {
+  height: 520px;
+  position: relative;
+  overflow: hidden;
+}
+
+.uganda-experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.uganda-experience-card:hover img {
+  transform: scale(1.045);
+}
+
+.uganda-experience-number {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.uganda-experience-content {
+  padding: 25px 5px;
+}
+
+.uganda-experience-content > span {
+  color: var(--uganda-army);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.uganda-experience-content h3 {
+  color: var(--uganda-green);
+  font-size: 28px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.uganda-experience-content p {
+  color: var(--uganda-muted);
+  line-height: 1.75;
+  font-size: 14px;
+  max-width: 550px;
+}
+
+.uganda-experience-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--uganda-green);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.uganda-feature {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 720px;
+  background: var(--uganda-deep);
+}
+
+.uganda-feature-image {
+  min-height: 600px;
+}
+
+.uganda-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uganda-feature-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 90px 9%;
+  color: white;
+}
+
+.uganda-feature-content .uganda-section-kicker {
+  color: var(--uganda-sand);
+}
+
+.uganda-feature-eyebrow {
+  color: var(--uganda-sand);
+  font-size: 17px;
+  margin: 15px 0;
+}
+
+.uganda-feature-content h2 {
+  margin: 0 0 30px;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.98;
+  font-weight: 300;
+}
+
+.uganda-feature-content h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.uganda-feature-content > p:not(.uganda-feature-eyebrow) {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 520px;
+}
+
+.uganda-feature-content .uganda-primary-button {
+  align-self: flex-start;
+  margin-top: 25px;
+  background: var(--uganda-sand);
+  color: var(--uganda-deep);
+}
+
+/* =========================================================
+   LODGES
+========================================================= */
+
+.uganda-lodge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.uganda-lodge-card {
+  background: var(--uganda-white);
+}
+
+.uganda-lodge-image {
+  height: 390px;
+  overflow: hidden;
+}
+
+.uganda-lodge-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.uganda-lodge-card:hover .uganda-lodge-image img {
+  transform: scale(1.04);
+}
+
+.uganda-lodge-content {
+  padding: 25px 30px 30px;
+}
+
+.uganda-lodge-content > span {
+  color: var(--uganda-army);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.uganda-lodge-content h3 {
+  color: var(--uganda-green);
+  font-size: 27px;
+  font-weight: 400;
+  margin: 9px 0;
+}
+
+.uganda-lodge-content p {
+  color: var(--uganda-muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* =========================================================
+   ITINERARY
+========================================================= */
+
+.uganda-itinerary {
+  padding: 140px 0;
+  background: var(--uganda-white);
+}
+
+.uganda-itinerary-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 100px;
+}
+
+.uganda-itinerary-grid h2 {
+  color: var(--uganda-green);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.uganda-itinerary-grid h2 em {
+  font-family: Georgia, serif;
+}
+
+.uganda-itinerary-list {
+  border-top: 1px solid rgba(23,63,42,0.18);
+}
+
+.uganda-itinerary-list > div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(23,63,42,0.18);
+}
+
+.uganda-itinerary-list span {
+  color: var(--uganda-gold);
+  font-size: 11px;
+}
+
+.uganda-itinerary-list strong {
+  color: var(--uganda-green);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.uganda-itinerary-list p {
+  grid-column: 2;
+  color: var(--uganda-muted);
+  font-size: 14px;
+  margin: 6px 0 0;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.uganda-final-cta {
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    url("../assets/lake-mburo.jpg")
+    center / cover no-repeat;
+}
+
+.uganda-final-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16,45,32,0.68);
+}
+
+.uganda-final-cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 80px 25px;
+}
+
+.uganda-final-cta-content > span {
+  color: var(--uganda-sand);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.uganda-final-cta-content h2 {
+  margin: 25px 0;
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.9;
+  font-weight: 300;
+  letter-spacing: -0.05em;
+}
+
+.uganda-final-cta-content h2 em {
+  font-family: Georgia, serif;
+}
+
+.uganda-final-cta-content p {
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.uganda-light-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  color: var(--uganda-green);
+  text-decoration: none;
+  padding: 16px 24px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .uganda-container {
+    width: min(100% - 40px, 700px);
+  }
+
+  .uganda-hero-content {
+    width: calc(100% - 40px);
+  }
+
+  .uganda-hero {
+    min-height: 80vh;
+  }
+
+  .uganda-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .uganda-facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .uganda-fact:nth-child(2) {
+    border-right: none;
+  }
+
+  .uganda-section-heading {
+    display: block;
+  }
+
+  .uganda-section-heading > p {
+    margin-top: 25px;
+  }
+
+  .uganda-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .uganda-feature-image {
+    height: 500px;
+    min-height: 0;
+  }
+
+  .uganda-itinerary-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .uganda-container {
+    width: calc(100% - 30px);
+  }
+
+  .uganda-hero-content {
+    width: calc(100% - 30px);
+    padding-bottom: 75px;
+  }
+
+  .uganda-hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .uganda-hero-content > p {
+    font-size: 15px;
+  }
+
+  .uganda-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .uganda-hero-caption {
+    display: none;
+  }
+
+  .uganda-introduction,
+  .uganda-experiences,
+  .uganda-lodges,
+  .uganda-itinerary {
+    padding: 90px 0;
+  }
+
+  .uganda-facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .uganda-fact {
+    padding: 30px 15px;
+  }
+
+  .uganda-fact strong {
+    font-size: 32px;
+  }
+
+  .uganda-experience-grid,
+  .uganda-lodge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uganda-experience-image {
+    height: 420px;
+  }
+
+  .uganda-lodge-image {
+    height: 300px;
+  }
+
+  .uganda-feature-content {
+    padding: 75px 25px;
+  }
+
+  .uganda-final-cta {
+    min-height: 560px;
+  }
+}

@@ -1,98 +1,1228 @@
-.navbar {
+/* =========================================================
+   NYLORA SAFARIS — PREMIUM NAVBAR
+   Navbar.css
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+  --nylora-green: #183f2b;
+  --nylora-green-dark: #102f20;
+  --nylora-green-deep: #0b2418;
+
+  --nylora-cream: #f7f4ec;
+  --nylora-cream-soft: #efede4;
+
+  --nylora-white: #ffffff;
+  --nylora-text: #26352c;
+  --nylora-muted: #718078;
+
+  --nylora-border: rgba(24, 63, 43, 0.14);
+  --nylora-border-light: rgba(255, 255, 255, 0.15);
+
+  --nylora-shadow:
+    0 18px 60px rgba(10, 35, 22, 0.12);
+
+  --nylora-transition:
+    280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.nylora-navbar {
   position: fixed;
   top: 0;
+  left: 0;
+
   width: 100%;
-  z-index: 999;
-  padding: 18px 0;
-  transition: 0.4s ease;
-  background: transparent;
+  z-index: 1000;
+
+  background: rgba(247, 244, 236, 0.94);
+
+  border-bottom: 1px solid
+    rgba(24, 63, 43, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    background var(--nylora-transition),
+    box-shadow var(--nylora-transition),
+    border-color var(--nylora-transition);
 }
 
-.navbar.scrolled {
-  background: rgba(10, 12, 10, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+/* =========================================================
+   SCROLLED NAVBAR
+========================================================= */
+
+.nylora-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+
+  border-bottom-color:
+    rgba(24, 63, 43, 0.12);
+
+  box-shadow:
+    0 10px 40px rgba(13, 39, 25, 0.08);
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
+
+/* =========================================================
+   NAVBAR INNER
+========================================================= */
+
+.nylora-navbar-inner {
+  width: min(1380px, calc(100% - 60px));
+
+  min-height: 86px;
+
+  margin: 0 auto;
+
   display: flex;
+  align-items: center;
+
+  gap: 40px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.nylora-brand {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  color: var(--nylora-green);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   BRAND MARK
+========================================================= */
+
+.nylora-brand-mark {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(24, 63, 43, 0.35);
+
+  color: var(--nylora-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 21px;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.nylora-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.nylora-brand-text strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+}
+
+.nylora-brand-text small {
+  margin-top: 5px;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.38em;
+
+  color: var(--nylora-muted);
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.nylora-desktop-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+  margin-left: auto;
+}
+
+
+/* =========================================================
+   NORMAL NAV LINKS
+========================================================= */
+
+.nylora-nav-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 86px;
+
+  color: #34443a;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+
+  transition:
+    color var(--nylora-transition);
+}
+
+.nylora-nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 25px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--nylora-green);
+
+  transition:
+    width var(--nylora-transition);
+}
+
+.nylora-nav-link:hover {
+  color: var(--nylora-green);
+}
+
+.nylora-nav-link:hover::after,
+.nylora-nav-link.active::after {
+  width: 100%;
+}
+
+.nylora-nav-link.active {
+  color: var(--nylora-green);
+}
+
+
+/* =========================================================
+   DESTINATION TRIGGER
+========================================================= */
+
+.nylora-nav-dropdown {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================================
+   DESTINATION LINK + ARROW
+========================================================= */
+
+.nylora-destination-trigger {
+  display: flex;
+  align-items: center;
+}
+
+
+/*
+   Important:
+   The Destinations text is a real Link.
+*/
+
+.nylora-destination-link {
+  min-height: 86px;
+}
+
+
+/* =========================================================
+   DESTINATION ARROW BUTTON
+========================================================= */
+
+.nylora-destination-arrow {
+  width: 28px;
+  height: 42px;
+
+  margin-left: -4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--nylora-green);
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.nylora-destination-arrow svg {
+  width: 14px;
+  height: 14px;
+
+  transition:
+    transform var(--nylora-transition);
+}
+
+.nylora-destination-arrow svg.rotate {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DESKTOP DROPDOWN
+========================================================= */
+
+.nylora-dropdown-menu {
+  position: absolute;
+
+  top: calc(100% - 4px);
+
+  left: 50%;
+
+  width: 330px;
+
+  padding: 12px;
+
+  transform:
+    translate(-50%, 14px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  background:
+    rgba(255, 255, 255, 0.98);
+
+  border:
+    1px solid
+    rgba(24, 63, 43, 0.12);
+
+  box-shadow:
+    0 24px 70px
+    rgba(11, 36, 24, 0.15);
+
+  transition:
+    opacity var(--nylora-transition),
+    transform var(--nylora-transition),
+    visibility var(--nylora-transition);
+}
+
+
+/* =========================================================
+   SHOW DROPDOWN
+========================================================= */
+
+.nylora-dropdown-menu.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform:
+    translate(-50%, 0);
+}
+
+
+/* =========================================================
+   DROPDOWN HEADING
+========================================================= */
+
+.nylora-dropdown-heading {
+  padding: 18px 18px 16px;
+
+  border-bottom:
+    1px solid
+    rgba(24, 63, 43, 0.1);
+}
+
+.nylora-dropdown-heading span {
+  display: block;
+
+  color: var(--nylora-green);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.nylora-dropdown-heading p {
+  margin: 7px 0 0;
+
+  color: var(--nylora-muted);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   DROPDOWN LINKS
+========================================================= */
+
+.nylora-dropdown-menu > a {
+  display: flex;
+
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-}
 
-/* LOGO */
-.logo img {
-  height: 50px;
-}
+  gap: 20px;
 
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
+  padding: 17px 18px;
 
-.nav-links a {
-  color: white;
+  color: var(--nylora-text);
+
   text-decoration: none;
-  font-weight: 400;
-  font-size: 0.95rem;
-  transition: 0.3s;
+
+  border-bottom:
+    1px solid
+    rgba(24, 63, 43, 0.08);
+
+  transition:
+    background var(--nylora-transition),
+    color var(--nylora-transition);
 }
 
-.nav-links a:hover {
-  color: #d4af37;
+.nylora-dropdown-menu > a:hover {
+  background:
+    rgba(24, 63, 43, 0.055);
+
+  color: var(--nylora-green);
 }
 
-/* LUXURY CTA BUTTON */
-.nav-cta {
-  background: #d4af37;
-  color: black !important;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: 0.3s;
+.nylora-dropdown-menu > a:last-child {
+  border-bottom: 0;
 }
 
-.nav-cta:hover {
-  transform: translateY(-2px);
-}
 
-/* HAMBURGER */
-.hamburger {
-  display: none;
+/* =========================================================
+   DROPDOWN COUNTRY TEXT
+========================================================= */
+
+.nylora-dropdown-menu > a span {
+  display: flex;
   flex-direction: column;
+
   gap: 5px;
+}
+
+.nylora-dropdown-menu > a strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  font-weight: 500;
+}
+
+.nylora-dropdown-menu > a small {
+  color: var(--nylora-muted);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   DROPDOWN ARROW
+========================================================= */
+
+.nylora-dropdown-menu > a svg {
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
+
+  transition:
+    transform var(--nylora-transition);
+}
+
+.nylora-dropdown-menu > a:hover svg {
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* =========================================================
+   VIEW ALL DESTINATIONS
+========================================================= */
+
+.nylora-dropdown-menu
+  > a.dropdown-view-all {
+
+  color: var(--nylora-green);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   DESKTOP CTA
+========================================================= */
+
+.nylora-navbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.nylora-enquire-btn {
+  min-height: 46px;
+
+  padding:
+    0 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  background:
+    var(--nylora-green);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  transition:
+    background var(--nylora-transition),
+    transform var(--nylora-transition),
+    box-shadow var(--nylora-transition);
+}
+
+.nylora-enquire-btn:hover {
+  background:
+    var(--nylora-green-dark);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(24, 63, 43, 0.2);
+}
+
+.nylora-enquire-btn svg {
+  width: 16px;
+  height: 16px;
+
+  transition:
+    transform var(--nylora-transition);
+}
+
+.nylora-enquire-btn:hover svg {
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
+.nylora-mobile-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  margin-left: auto;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(24, 63, 43, 0.15);
+
+  background: transparent;
+
+  color: var(--nylora-green);
+
   cursor: pointer;
 }
 
-.hamburger span {
-  width: 25px;
-  height: 2px;
-  background: white;
+.nylora-mobile-toggle svg {
+  width: 22px;
+  height: 22px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.nylora-mobile-menu {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 999;
+
+  background:
+    var(--nylora-cream);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform:
+    translateY(-20px);
+
+  transition:
+    opacity var(--nylora-transition),
+    transform var(--nylora-transition),
+    visibility var(--nylora-transition);
+}
+
+.nylora-mobile-menu.open {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE INNER
+========================================================= */
+
+.nylora-mobile-menu-inner {
+  height: 100%;
+
+  width: min(
+    680px,
+    calc(100% - 42px)
+  );
+
+  margin: 0 auto;
+
+  padding:
+    125px 0 35px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   MOBILE INTRO
+========================================================= */
+
+.nylora-mobile-intro {
+  padding-bottom: 25px;
+
+  border-bottom:
+    1px solid
+    rgba(24, 63, 43, 0.13);
+}
+
+.nylora-mobile-intro span {
+  display: block;
+
+  color: var(--nylora-green);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+}
+
+.nylora-mobile-intro p {
+  max-width: 430px;
+
+  margin: 10px 0 0;
+
+  color: var(--nylora-muted);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.nylora-mobile-nav {
+  margin-top: 12px;
+
+  overflow-y: auto;
+
+  flex: 1;
+}
+
+
+/* =========================================================
+   MOBILE NAV LINKS
+========================================================= */
+
+.nylora-mobile-nav > a {
+  min-height: 66px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  border-bottom:
+    1px solid
+    rgba(24, 63, 43, 0.1);
+
+  color: var(--nylora-text);
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 21px;
+
+  transition:
+    color var(--nylora-transition),
+    padding-left var(--nylora-transition);
+}
+
+.nylora-mobile-nav > a:hover,
+.nylora-mobile-nav > a.active {
+  color: var(--nylora-green);
+
+  padding-left: 5px;
+}
+
+.nylora-mobile-nav > a > span {
+  width: 28px;
+
+  color: #829087;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.nylora-mobile-nav > a strong {
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   MOBILE DESTINATIONS WRAPPER
+========================================================= */
+
+.nylora-mobile-destinations {
+  border-bottom:
+    1px solid
+    rgba(24, 63, 43, 0.1);
+}
+
+
+/* =========================================================
+   MOBILE DESTINATION ROW
+========================================================= */
+
+.nylora-mobile-destination-row {
+  display: flex;
+
+  align-items: center;
+}
+
+.nylora-mobile-destination-row > a {
+  min-height: 66px;
+
+  flex: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  color: var(--nylora-text);
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 21px;
+}
+
+.nylora-mobile-destination-row > a.active {
+  color: var(--nylora-green);
+}
+
+.nylora-mobile-destination-row > a > span {
+  width: 28px;
+
+  color: #829087;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.nylora-mobile-destination-row > a strong {
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   MOBILE DESTINATION TOGGLE
+========================================================= */
+
+.nylora-mobile-destination-toggle {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--nylora-green);
+
+  cursor: pointer;
+}
+
+.nylora-mobile-destination-toggle svg {
+  width: 18px;
+  height: 18px;
+
+  transition:
+    transform var(--nylora-transition);
+}
+
+.nylora-mobile-destination-toggle svg.rotate {
+  transform:
+    rotate(180deg);
+}
+
+
+/* =========================================================
+   MOBILE DESTINATION SUBMENU
+========================================================= */
+
+.nylora-mobile-destination-submenu {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  padding-left: 46px;
+
+  transition:
+    max-height 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms ease,
+    padding-bottom 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   OPEN MOBILE DESTINATIONS
+========================================================= */
+
+.nylora-mobile-destinations.open
+  .nylora-mobile-destination-submenu {
+
+  max-height: 260px;
+
+  opacity: 1;
+
+  padding-bottom: 10px;
+}
+
+
+/* =========================================================
+   MOBILE DESTINATION SUB-LINKS
+========================================================= */
+
+.nylora-mobile-destination-submenu > a {
+  min-height: 57px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding:
+    0 8px 0 0;
+
+  color: #45554b;
+
+  text-decoration: none;
+
+  border-top:
+    1px solid
+    rgba(24, 63, 43, 0.07);
+
+  font-size: 15px;
+
+  transition:
+    color var(--nylora-transition),
+    padding-left var(--nylora-transition);
+}
+
+.nylora-mobile-destination-submenu > a:hover {
+  color: var(--nylora-green);
+
+  padding-left: 5px;
+}
+
+
+/* =========================================================
+   MOBILE DESTINATION SUB-LINK TEXT
+========================================================= */
+
+.nylora-mobile-destination-submenu > a span {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.nylora-mobile-destination-submenu > a small {
+  color: #87928c;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.nylora-mobile-destination-submenu > a svg {
+  width: 15px;
+  height: 15px;
+}
+
+
+/* =========================================================
+   MOBILE BOTTOM
+========================================================= */
+
+.nylora-mobile-bottom {
+  padding-top: 20px;
+
+  border-top:
+    1px solid
+    rgba(24, 63, 43, 0.13);
+}
+
+
+/* =========================================================
+   MOBILE CTA
+========================================================= */
+
+.nylora-mobile-cta {
+  min-height: 55px;
+
+  padding:
+    0 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  background:
+    var(--nylora-green);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.nylora-mobile-cta svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =========================================================
+   MOBILE CONTACT
+========================================================= */
+
+.nylora-mobile-contact {
+  margin-top: 15px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.nylora-mobile-contact small {
+  color: var(--nylora-muted);
+
+  font-size: 9px;
+
+  letter-spacing: 0.04em;
+}
+
+.nylora-mobile-contact a {
+  color: var(--nylora-green);
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .nylora-navbar-inner {
+    width:
+      min(
+        100% - 40px,
+        1380px
+      );
+
+    gap: 25px;
   }
 
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: rgba(10, 12, 10, 0.98);
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 12px;
+  .nylora-desktop-nav {
+    gap: 19px;
+  }
+
+  .nylora-nav-link {
+    font-size: 10px;
+  }
+
+  .nylora-enquire-btn {
+    padding: 0 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .nylora-navbar {
+    background:
+      rgba(247, 244, 236, 0.97);
+  }
+
+
+  .nylora-navbar-inner {
+    min-height: 76px;
+
+    width:
+      calc(100% - 36px);
+  }
+
+
+  .nylora-desktop-nav,
+  .nylora-navbar-actions {
     display: none;
   }
 
-  .nav-links.active {
+
+  .nylora-mobile-toggle {
     display: flex;
+  }
+
+
+  .nylora-brand-mark {
+    width: 39px;
+    height: 39px;
+  }
+
+
+  .nylora-brand-text strong {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .nylora-navbar-inner {
+    width:
+      calc(100% - 28px);
+  }
+
+
+  .nylora-mobile-menu-inner {
+    width:
+      calc(100% - 30px);
+
+    padding-top: 105px;
+  }
+
+
+  .nylora-mobile-intro p {
+    font-size: 15px;
+  }
+
+
+  .nylora-mobile-nav > a,
+  .nylora-mobile-destination-row > a {
+    font-size: 19px;
+  }
+
+
+  .nylora-mobile-contact {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.nylora-navbar a:focus-visible,
+.nylora-navbar button:focus-visible,
+.nylora-mobile-menu a:focus-visible,
+.nylora-mobile-menu button:focus-visible {
+  outline:
+    2px solid
+    var(--nylora-green);
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nylora-navbar *,
+  .nylora-mobile-menu *,
+  .nylora-dropdown-menu {
+    transition: none !important;
   }
 }

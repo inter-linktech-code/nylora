@@ -1,121 +1,285 @@
+import { Link } from "react-router-dom";
+import {
+  FiArrowUpRight,
+  FiInstagram,
+  FiFacebook,
+  FiMail,
+  FiPhone,
+} from "react-icons/fi";
+
 import "./Footer.css";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="footer" aria-label="Site Footer">
+    <footer className="nylora-footer">
 
-      <div className="container">
+      {/* =====================================================
+          FOOTER INTRO
+      ===================================================== */}
 
-        <div className="footer-grid">
+      <div className="nylora-footer-main">
 
-          {/* BRAND */}
-          <div className="footer-brand">
-            <h2>NYLORA SAFARIS</h2>
-            <p>Luxury Safaris in Uganda, Rwanda & East Africa</p>
+        <div className="footer-container">
 
-            <p className="tagline">
-              Entebbe & Kampala-based luxury safari operator specializing in
-              bespoke journeys across Uganda, Rwanda, Kenya, and Tanzania.
-              Experience gorilla trekking, Big Five safaris, and tailor-made
-              East African adventures designed with excellence and authenticity.
-            </p>
-          </div>
+          <div className="footer-intro">
 
-          {/* EXPLORE */}
-          <div className="footer-links">
-            <h3>Explore</h3>
-            <a href="/">Home</a>
-            <a href="/tours">Luxury Safaris</a>
-            <a href="/destinations">Destinations</a>
-            <a href="/gallery">Gallery</a>
-            <a href="/contact">Contact</a>
-          </div>
+            <div className="footer-brand">
 
-          {/* DESTINATIONS SEO SECTION */}
-          <div className="footer-links">
-            <h3>Destinations</h3>
-            <a href="/uganda-safaris">Uganda Luxury Safaris</a>
-            <a href="/rwanda-gorilla-tours">Rwanda Gorilla Trekking</a>
-            <a href="/kenya-safaris">Kenya Wildlife Safaris</a>
-            <a href="/tanzania-safaris">Tanzania Serengeti Safaris</a>
-            <a href="/east-africa">East Africa Safari Packages</a>
-          </div>
+              <Link
+                to="/"
+                className="footer-logo"
+                aria-label="Nylora Safaris Home"
+              >
+                <span className="footer-logo-mark">
+                  N
+                </span>
 
-          {/* CONTACT */}
-          <div className="footer-links">
-            <h3>Contact</h3>
-            <p>Kampala, Uganda</p>
-            <p>+256 70000000</p>
-            <p>info@nylorasafaris.com</p>
-          </div>
+                <span className="footer-logo-text">
+                  <strong>NYLORA</strong>
+                  <small>SAFARIS</small>
+                </span>
+              </Link>
 
-          {/* CTA */}
-          <div className="footer-cta">
-            <h3>Plan Your Luxury Safari</h3>
-            <p>
-              Speak with a safari expert and design your tailor-made East African journey.
+            </div>
+
+            <p className="footer-intro-text">
+              Thoughtfully crafted journeys through Uganda and Rwanda,
+              connecting travellers with extraordinary wildlife,
+              remarkable landscapes and places that stay with you long
+              after you return home.
             </p>
 
             <a
-              href="https://wa.me/2567000000?text=Hello%20Nylora%20Luxury%20Safaris,%20I%20want%20to%20plan%20a%20luxury%20safari%20in%20East%20Africa."
+              href="https://wa.me/256786349505"
               target="_blank"
-              rel="noreferrer"
-              className="footer-btn"
+              rel="noopener noreferrer"
+              className="footer-plan-button"
+            >
+              <span>Plan Your Safari</span>
+              <FiArrowUpRight />
+            </a>
+
+          </div>
+
+
+          {/* =====================================================
+              EXPLORE
+          ===================================================== */}
+
+          <div className="footer-column">
+
+            <span className="footer-column-label">
+              EXPLORE
+            </span>
+
+            <Link to="/safaris">
+              Safaris
+            </Link>
+
+            <Link to="/destinations">
+              Destinations
+            </Link>
+
+            <Link to="/destinations/uganda">
+              Uganda
+            </Link>
+
+            <Link to="/destinations/rwanda">
+              Rwanda
+            </Link>
+
+            <Link to="/gorilla-trekking">
+              Gorilla & Golden Monkey Trekking
+            </Link>
+
+          </div>
+
+
+          {/* =====================================================
+              JOURNEY
+          ===================================================== */}
+
+          <div className="footer-column">
+
+            <span className="footer-column-label">
+              YOUR JOURNEY
+            </span>
+
+            <Link to="/about">
+              About Nylora
+            </Link>
+
+            <Link to="/booking">
+              Plan Your Safari
+            </Link>
+
+            <Link to="/contact">
+              Contact Us
+            </Link>
+
+            <a
+              href="https://wa.me/256786349505"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               WhatsApp Us
             </a>
+
           </div>
 
-        </div>
 
-        {/* SEO + TRUST FOOTER BAR */}
-        <div className="footer-bottom">
+          {/* =====================================================
+              CONTACT
+          ===================================================== */}
 
-          <p>
-            © {currentYear} Nylora Safaris Experts in Uganda,
-            Rwanda & East Africa. All Rights Reserved.
-          </p>
+          <div className="footer-column footer-contact">
 
-          <p className="powered">
-            Powered by{" "}
-            <a href="https://inter-linktech.com" target="_blank" rel="noreferrer">
-              INTER-LINK TECH
+            <span className="footer-column-label">
+              SPEAK WITH US
+            </span>
+
+            <p>
+              Tell us where you would like to go.
+              We will help shape the journey around you.
+            </p>
+
+            <a
+              href="tel:+256786349505"
+              className="footer-contact-link"
+            >
+              <FiPhone />
+
+              <span>
+                +256 786 349505
+              </span>
             </a>
-          </p>
+
+            <a
+              href="mailto:info@nylora.com"
+              className="footer-contact-link"
+            >
+              <FiMail />
+
+              <span>
+                info@nylora.com
+              </span>
+            </a>
+
+            <span className="footer-location">
+              Uganda · Rwanda · East Africa
+            </span>
+
+          </div>
 
         </div>
 
       </div>
 
-      {/* SEO STRUCTURED DATA (VERY IMPORTANT FOR GOOGLE) */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "TravelAgency",
-          "name": "Nylora Safaris",
-          "url": "https://nylorasafaris.com",
-          "telephone": "+2567000000",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Kampala",
-            "addressCountry": "Uganda"
-          },
-          "description":
-            "Luxury safari company specializing in Uganda safaris, Rwanda gorilla trekking, Kenya and Tanzania wildlife safaris, and bespoke East Africa travel experiences.",
-          "areaServed": [
-            "Uganda",
-            "Rwanda",
-            "Kenya",
-            "Tanzania",
-            "East Africa"
-          ],
-          "sameAs": [
-            "https://wa.me/25670000000"
-          ]
-        })}
-      </script>
+
+      {/* =====================================================
+          FOOTER STATEMENT
+      ===================================================== */}
+
+      <div className="footer-statement">
+
+        <div className="footer-container">
+
+          <div className="footer-statement-line" />
+
+          <div className="footer-statement-content">
+
+            <span>
+              THE WILD HEART OF EAST AFRICA
+            </span>
+
+            <p>
+              Uganda & Rwanda
+            </p>
+
+          </div>
+
+          <div className="footer-statement-line" />
+
+        </div>
+
+      </div>
+
+
+      {/* =====================================================
+          FOOTER BOTTOM
+      ===================================================== */}
+
+      <div className="footer-bottom">
+
+        <div className="footer-container">
+
+          <div className="footer-bottom-inner">
+
+            {/* COPYRIGHT */}
+
+            <div className="footer-copyright">
+
+              <span>
+                © {year} Nylora Safaris.
+              </span>
+
+              <span>
+                All rights reserved.
+              </span>
+
+            </div>
+
+
+            {/* SOCIAL */}
+
+            <div className="footer-socials">
+
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Nylora Safaris on Instagram"
+              >
+                <FiInstagram />
+              </a>
+
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Nylora Safaris on Facebook"
+              >
+                <FiFacebook />
+              </a>
+
+            </div>
+
+
+            {/* POWERED BY */}
+
+            <div className="footer-powered">
+
+              <span>
+                Powered by
+              </span>
+
+              <a
+                href="https://inter-linktech.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                INTER-LINK TECH
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </footer>
   );
