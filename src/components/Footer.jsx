@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="footer-links">
             <h3>Contact</h3>
             <p>Kampala, Uganda</p>
-            <p>+256 742 706323</p>
+            <p>+256 70000000</p>
             <p>info@nylorasafaris.com</p>
           </div>
 
