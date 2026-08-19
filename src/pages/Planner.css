@@ -1,0 +1,37 @@
+.planner {
+  padding: 100px 20px;
+  color: white;
+}
+
+.planner-form {
+  display: grid;
+  gap: 20px;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+.planner-form input,
+.planner-form select {
+  padding: 10px;
+  width: 100%;
+}
+
+.planner-results {
+  display: grid;
+  gap: 20px;
+}
+
+.planner-card {
+  display: flex;
+  gap: 15px;
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.planner-card img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}

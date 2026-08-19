@@ -1,0 +1,100 @@
+.contact {
+  position: relative;
+  min-height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.contact-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.65)
+  );
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.contact-content {
+  max-width: 700px;
+}
+
+.contact-content small {
+  color: #d4af37;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.contact-content h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 20px 0;
+  line-height: 1.1;
+}
+
+.contact-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn.gold {
+  background: #d4af37;
+  color: #111;
+}
+
+.btn.gold:hover {
+  transform: translateY(-2px);
+}
+
+.btn.outline {
+  border: 1px solid rgba(255,255,255,0.6);
+  color: white;
+}
+
+.btn.outline:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,274 @@
+/* =========================
+   GLOBAL PAGE STYLING
+========================= */
+.destinations-page {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fb;
+  color: #1b1b1b;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.destinations-hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.destinations-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.4)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content small {
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: #f5c542;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 15px 0;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* =========================
+   COUNTRY BUTTONS
+========================= */
+.map-section {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.map-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.map-buttons button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #043302;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.map-buttons button:hover {
+  background: #d4af37;
+  color: #fff;
+}
+
+.map-buttons button.active {
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* =========================
+   GRID SECTION
+========================= */
+.destinations-grid-section {
+  padding: 40px 20px 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.country-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #1b4332;
+}
+
+/* =========================
+   CATEGORY TITLE
+========================= */
+.destination-category {
+  margin-bottom: 60px;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 5px solid #241c02;
+  color: #2d6a4f;
+}
+
+/* =========================
+   DESTINATION GRID
+========================= */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* =========================
+   DESTINATION CARD
+========================= */
+.destination-card {
+  background: #013042ea;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.img-box {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.destination-card:hover img {
+  transform: scale(1.1);
+}
+
+/* TEXT */
+.destination-card h3 {
+  margin: 15px;
+  font-size: 1.2rem;
+  color: #1b1b1b;
+}
+
+.destination-desc {
+  margin: 0 15px 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+.destinations-cta {
+  background: linear-gradient(135deg, #1b4332, #2d6a4f);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.destinations-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.destinations-cta p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 35px;
+  background: #d4af37;
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #fff;
+  color: #1b4332;
+  transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .country-title {
+    font-size: 1.8rem;
+  }
+
+  .category-title {
+    font-size: 1.4rem;
+  }
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.destination-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+}
+
+.img-box {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

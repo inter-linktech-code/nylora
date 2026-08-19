@@ -1,0 +1,202 @@
+/* =========================
+   FEATURED SECTION WRAPPER
+========================= */
+
+.lux-featured {
+  padding: 120px 8%;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+/* =========================
+   HEADER (EDITORIAL STYLE)
+========================= */
+
+.lux-featured-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 70px;
+}
+
+.lux-featured-header small {
+  color: #c8a45d;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.lux-featured-header h2 {
+  font-size: 3rem;
+  margin: 15px 0;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+.lux-featured-header p {
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   GRID (3–4 LUXURY CARDS)
+========================= */
+
+.lux-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.lux-card {
+  background: #121212;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.lux-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(200, 164, 93, 0.4);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.lux-card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.lux-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.lux-card:hover img {
+  transform: scale(1.1);
+}
+
+/* BADGE */
+.lux-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(200,164,93,0.9);
+  color: #111;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.lux-card-content {
+  padding: 20px;
+}
+
+.lux-location {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+.lux-card-content h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.lux-card-content p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+/* META */
+.lux-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.lux-meta .price {
+  color: #c8a45d;
+  font-weight: 600;
+}
+
+/* =========================
+   BUTTONS (SMALL LUXURY CTAs)
+========================= */
+
+.lux-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lux-btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+/* PRIMARY */
+.lux-btn.primary {
+  background: #c8a45d;
+  color: #111;
+}
+
+.lux-btn.primary:hover {
+  background: #b8924f;
+}
+
+/* SECONDARY */
+.lux-btn.secondary {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+.lux-btn.secondary:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .lux-featured-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .lux-actions {
+    flex-direction: column;
+  }
+
+  .lux-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,315 @@
+
+/* =========================
+   SAFARI / TOURISM THEME
+   Engeya Luxury Safaris
+========================= */
+
+:root {
+  --primary-green: #1b4332;
+  --deep-green: #0b2e22;
+  --earth-brown: #8d6e63;
+  --sand: #f5f0e6;
+  --soft-white: #ffffff;
+  --text-dark: #1f2937;
+  --muted: #6b7280;
+  --accent: #2d6a4f;
+}
+
+/* =========================
+   PAGE BASE
+========================= */
+
+.contact-page {
+  background: var(--sand);
+  color: var(--text-dark);
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.contact-hero {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 46, 34, 0.55); /* safari green overlay */
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  color: var(--soft-white);
+}
+
+.hero-content small {
+  color: #d9c08c; /* safari gold accent */
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  color: #e5e7eb;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================
+   CONTACT INFO
+========================= */
+
+.contact-info {
+  padding: 80px 20px;
+  background: var(--soft-white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+}
+
+.info-card h3 {
+  color: var(--primary-green);
+  font-size: 14px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.contact-form-section {
+  padding: 100px 20px;
+  background: var(--sand);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.form-content small {
+  color: var(--primary-green);
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.form-content h2 {
+  font-size: 36px;
+  margin: 15px 0;
+  color: var(--deep-green);
+}
+
+.form-content p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* FORM */
+.contact-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  color: var(--text-dark);
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-green);
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary-green);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--deep-green);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   MAP
+========================= */
+
+.map-section iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title small {
+  color: var(--primary-green);
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  margin-top: 10px;
+  color: var(--deep-green);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.faq-card {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.faq-card h3 {
+  color: var(--primary-green);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.faq-card p {
+  color: var(--muted);
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.contact-cta {
+  padding: 100px 20px;
+  text-align: center;
+  background: var(--deep-green);
+  color: white;
+}
+
+.contact-cta h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.contact-cta p {
+  color: #e5e7eb;
+  margin-bottom: 25px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  background: #d9c08c; /* safari warm accent */
+  color: var(--deep-green);
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  background: #c9ad72;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}

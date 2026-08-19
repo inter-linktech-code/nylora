@@ -1,0 +1,283 @@
+/* ==========================
+   LUXURY BOOKING PAGE
+========================== */
+
+.booking-page {
+  background: #0b0f0d;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.booking-hero {
+  position: relative;
+  height: 80vh;
+  background: url("../assets/gorilla.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(10,10,10,0.45),
+    rgba(10,10,10,0.85)
+  );
+}
+
+.booking-hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.booking-hero-content span {
+  color: #d4af37;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+}
+
+.booking-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+.booking-hero-content p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ==========================
+   FORM WRAPPER
+========================== */
+
+.booking-section {
+  padding: 80px 20px;
+}
+
+.booking-container {
+  width: min(900px, 95%);
+  margin: auto;
+  background: rgba(20, 24, 22, 0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+/* ==========================
+   PROGRESS
+========================== */
+
+.booking-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.progress-step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.progress-step.active {
+  background: #d4af37;
+  color: #111;
+  border-color: #d4af37;
+}
+
+.progress-line {
+  width: 60px;
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+}
+
+.progress-line.active {
+  background: #d4af37;
+}
+
+/* ==========================
+   STEPS
+========================== */
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.step-content h2 {
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* ==========================
+   INPUTS
+========================== */
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #121615;
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+}
+
+/* ==========================
+   SELECTED TOUR BOX
+========================== */
+
+.selected-tour-box {
+  background: rgba(212,175,55,0.08);
+  border: 1px solid rgba(212,175,55,0.3);
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.selected-tour-box h3 {
+  color: #d4af37;
+  margin-bottom: 5px;
+}
+
+/* ==========================
+   BUDGET GRID
+========================== */
+
+.budget-title {
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.budget-card {
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.budget-card:hover {
+  border-color: #d4af37;
+}
+
+.budget-card.selected {
+  background: #d4af37;
+  color: #111;
+  border-color: #d4af37;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.primary-btn,
+.secondary-btn {
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn {
+  background: #d4af37;
+  color: #111;
+}
+
+.primary-btn:hover {
+  background: #fff;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* ==========================
+   SUMMARY BOX
+========================== */
+
+.summary-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 14px;
+}
+
+.summary-box h4 {
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+  .booking-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .booking-container {
+    padding: 25px;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .progress-line {
+    width: 30px;
+  }
+}
