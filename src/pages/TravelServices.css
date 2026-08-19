@@ -1,0 +1,1296 @@
+/* ============================================================
+   NYLORA SAFARIS
+   TRAVEL SERVICES — PREMIUM EDITORIAL DESIGN
+============================================================ */
+
+:root {
+  --travel-forest: #173d2d;
+  --travel-forest-dark: #102c21;
+  --travel-green: #28543d;
+  --travel-olive: #536a4d;
+  --travel-cream: #f5f1e8;
+  --travel-ivory: #faf8f2;
+  --travel-paper: #eee9dc;
+  --travel-white: #ffffff;
+  --travel-text: #1b2b22;
+  --travel-muted: #68736c;
+  --travel-border: rgba(23, 61, 45, 0.14);
+  --travel-gold: #b69a63;
+  --travel-gold-light: #d2bd8b;
+
+  --travel-serif: Georgia, "Times New Roman", serif;
+  --travel-sans: Inter, "Helvetica Neue", Arial, sans-serif;
+
+  --travel-container: 1320px;
+}
+
+
+/* ============================================================
+   RESET / BASE
+============================================================ */
+
+.travel-services-page {
+  width: 100%;
+  overflow: hidden;
+  background: var(--travel-cream);
+  color: var(--travel-text);
+  font-family: var(--travel-sans);
+}
+
+.travel-services-page *,
+.travel-services-page *::before,
+.travel-services-page *::after {
+  box-sizing: border-box;
+}
+
+.travel-services-page img {
+  display: block;
+  width: 100%;
+}
+
+.travel-services-page a {
+  text-decoration: none;
+}
+
+.travel-services-container {
+  width: min(
+    calc(100% - 80px),
+    var(--travel-container)
+  );
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.travel-services-hero {
+  position: relative;
+  min-height: 820px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--travel-forest-dark);
+  isolation: isolate;
+}
+
+.travel-services-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+
+  animation: travelHeroZoom 14s ease-out forwards;
+}
+
+@keyframes travelHeroZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.travel-services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 27, 19, 0.9) 0%,
+      rgba(11, 34, 24, 0.7) 38%,
+      rgba(11, 34, 24, 0.28) 72%,
+      rgba(11, 34, 24, 0.15) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 27, 19, 0.58),
+      transparent 45%
+    );
+}
+
+.travel-services-hero-content {
+  width: min(760px, 100%);
+  padding: 150px 0 130px;
+  color: var(--travel-white);
+}
+
+.travel-services-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 30px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.travel-services-eyebrow span {
+  width: 44px;
+  height: 1px;
+  background: var(--travel-gold-light);
+}
+
+.travel-services-hero h1 {
+  margin: 0;
+
+  font-family: var(--travel-serif);
+  font-size: clamp(58px, 7vw, 104px);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.travel-services-hero h1 em {
+  color: var(--travel-gold-light);
+  font-style: italic;
+}
+
+.travel-services-hero-content > p {
+  max-width: 650px;
+  margin: 36px 0 0;
+
+  color: rgba(255, 255, 255, 0.84);
+
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.travel-services-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 42px;
+}
+
+.travel-primary-button,
+.travel-secondary-button {
+  min-height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  padding: 0 27px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.travel-primary-button {
+  color: var(--travel-forest-dark);
+  background: var(--travel-white);
+}
+
+.travel-primary-button:hover {
+  transform: translateY(-3px);
+  background: var(--travel-gold-light);
+}
+
+.travel-secondary-button {
+  color: var(--travel-white);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.travel-secondary-button:hover {
+  transform: translateY(-3px);
+  border-color: var(--travel-white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.travel-primary-button svg,
+.travel-secondary-button svg {
+  font-size: 16px;
+}
+
+.travel-services-hero-note {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.travel-services-hero-note span {
+  color: var(--travel-gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.travel-services-hero-note p {
+  margin: 0;
+
+  font-family: var(--travel-serif);
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+
+/* ============================================================
+   INTRODUCTION
+============================================================ */
+
+.travel-introduction {
+  padding: 145px 0;
+  background: var(--travel-ivory);
+}
+
+.travel-introduction-grid {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 90px;
+}
+
+.travel-section-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-top: 12px;
+
+  color: var(--travel-muted);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.travel-section-label strong {
+  color: var(--travel-green);
+  font-size: 13px;
+}
+
+.travel-introduction-content {
+  max-width: 900px;
+}
+
+.travel-kicker {
+  display: block;
+
+  color: var(--travel-green);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  line-height: 1.4;
+}
+
+.travel-introduction-content h2,
+.travel-services-heading h2,
+.travel-combination-content h2,
+.travel-process-heading h2,
+.travel-services-cta h2 {
+  margin: 20px 0 30px;
+
+  font-family: var(--travel-serif);
+  font-size: clamp(43px, 5vw, 70px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+
+  color: var(--travel-forest);
+}
+
+.travel-introduction-content h2 em,
+.travel-services-heading h2 em,
+.travel-combination-content h2 em,
+.travel-process-heading h2 em,
+.travel-services-cta h2 em {
+  color: var(--travel-green);
+  font-style: italic;
+}
+
+.travel-introduction-content p {
+  max-width: 760px;
+
+  margin: 0 0 20px;
+
+  color: #59645d;
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.travel-introduction-content .travel-lead {
+  color: var(--travel-text);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+
+/* ============================================================
+   SERVICES SECTION
+============================================================ */
+
+.travel-services-list {
+  padding: 145px 0 160px;
+  background: var(--travel-cream);
+}
+
+.travel-services-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 80px;
+  align-items: end;
+
+  margin-bottom: 75px;
+}
+
+.travel-services-heading h2 {
+  margin-bottom: 0;
+}
+
+.travel-services-heading > p {
+  margin: 0;
+
+  color: var(--travel-muted);
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+
+/* ============================================================
+   SERVICE CARDS
+============================================================ */
+
+.travel-service-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px;
+}
+
+.travel-service-card {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--travel-white);
+
+  border: 1px solid var(--travel-border);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.travel-service-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 70px rgba(20, 43, 32, 0.13);
+}
+
+
+/* IMAGE */
+
+.travel-service-image {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  background: var(--travel-green);
+}
+
+.travel-service-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.travel-service-card:hover .travel-service-image img {
+  transform: scale(1.055);
+}
+
+.travel-service-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12, 32, 23, 0.02) 30%,
+      rgba(12, 32, 23, 0.68) 100%
+    );
+}
+
+.travel-service-number {
+  position: absolute;
+  top: 25px;
+  right: 28px;
+
+  color: var(--travel-white);
+
+  font-family: var(--travel-serif);
+  font-size: 19px;
+  font-style: italic;
+}
+
+
+/* CONTENT */
+
+.travel-service-card-content {
+  padding: 42px 45px 48px;
+}
+
+.travel-service-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  color: var(--travel-white);
+  background: var(--travel-forest);
+}
+
+.travel-service-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.travel-service-category {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--travel-olive);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.travel-service-card h3 {
+  margin: 0;
+
+  color: var(--travel-forest);
+
+  font-family: var(--travel-serif);
+  font-size: 39px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.travel-service-card h4 {
+  margin: 14px 0 20px;
+
+  color: var(--travel-green);
+
+  font-family: var(--travel-serif);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.travel-service-card-content > p {
+  margin: 0;
+
+  color: #667069;
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+
+/* DIVIDER */
+
+.travel-service-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 30px 0;
+
+  background: var(--travel-border);
+}
+
+
+/* INCLUDED */
+
+.travel-service-includes > span {
+  display: block;
+
+  margin-bottom: 17px;
+
+  color: var(--travel-forest);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.travel-service-includes ul {
+  display: grid;
+  gap: 11px;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.travel-service-includes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: #5d6861;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.travel-service-includes li svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: var(--travel-gold);
+  font-size: 14px;
+}
+
+
+/* LINK */
+
+.travel-service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 32px;
+
+  padding-bottom: 8px;
+
+  color: var(--travel-forest);
+
+  border-bottom: 1px solid var(--travel-forest);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.travel-service-link:hover {
+  gap: 18px;
+
+  color: var(--travel-gold);
+  border-color: var(--travel-gold);
+}
+
+
+/* ============================================================
+   COMBINATION SECTION
+============================================================ */
+
+.travel-combination-section {
+  padding: 145px 0;
+
+  color: var(--travel-white);
+  background: var(--travel-forest);
+}
+
+.travel-combination-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.6fr);
+  gap: 120px;
+  align-items: center;
+}
+
+.travel-combination-content .travel-kicker {
+  color: var(--travel-gold-light);
+}
+
+.travel-combination-content h2 {
+  color: var(--travel-white);
+}
+
+.travel-combination-content h2 em {
+  color: var(--travel-gold-light);
+}
+
+.travel-combination-content p {
+  max-width: 680px;
+
+  margin: 0 0 20px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.travel-dark-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 22px;
+  padding: 17px 25px;
+
+  color: var(--travel-forest-dark);
+  background: var(--travel-white);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.travel-dark-button:hover {
+  transform: translateY(-3px);
+  background: var(--travel-gold-light);
+}
+
+.travel-combination-stats {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.travel-stat {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  padding: 24px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.travel-stat strong {
+  color: var(--travel-gold-light);
+
+  font-family: var(--travel-serif);
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.travel-stat span {
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+
+/* ============================================================
+   PROCESS
+============================================================ */
+
+.travel-process-section {
+  padding: 145px 0;
+
+  background: var(--travel-ivory);
+}
+
+.travel-process-heading {
+  max-width: 850px;
+  margin-bottom: 75px;
+}
+
+.travel-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid var(--travel-border);
+}
+
+.travel-process-item {
+  min-height: 290px;
+
+  padding: 35px 45px 35px 0;
+
+  border-right: 1px solid var(--travel-border);
+}
+
+.travel-process-item:not(:first-child) {
+  padding-left: 45px;
+}
+
+.travel-process-item:last-child {
+  border-right: none;
+}
+
+.travel-process-item > span {
+  color: var(--travel-gold);
+
+  font-family: var(--travel-serif);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.travel-process-item h3 {
+  margin: 55px 0 16px;
+
+  color: var(--travel-forest);
+
+  font-family: var(--travel-serif);
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.travel-process-item p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: var(--travel-muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* ============================================================
+   FINAL CTA
+============================================================ */
+
+.travel-services-cta {
+  padding: 110px 0;
+
+  background: var(--travel-paper);
+}
+
+.travel-services-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  padding: 80px;
+
+  background: var(--travel-forest);
+}
+
+.travel-services-cta .travel-kicker {
+  color: var(--travel-gold-light);
+}
+
+.travel-services-cta h2 {
+  margin-bottom: 20px;
+
+  color: var(--travel-white);
+}
+
+.travel-services-cta h2 em {
+  color: var(--travel-gold-light);
+}
+
+.travel-services-cta p {
+  max-width: 570px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.travel-cta-actions {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.travel-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 56px;
+  padding: 0 25px;
+
+  color: var(--travel-forest-dark);
+  background: var(--travel-white);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.travel-cta-primary:hover {
+  transform: translateY(-3px);
+  background: var(--travel-gold-light);
+}
+
+.travel-cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: var(--travel-white);
+}
+
+.travel-cta-phone > svg {
+  color: var(--travel-gold-light);
+  font-size: 20px;
+}
+
+.travel-cta-phone span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  font-size: 14px;
+}
+
+.travel-cta-phone small {
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+
+/* ============================================================
+   LARGE LAPTOP
+============================================================ */
+
+@media (max-width: 1150px) {
+
+  .travel-services-container {
+    width: min(
+      calc(100% - 50px),
+      var(--travel-container)
+    );
+  }
+
+  .travel-services-hero {
+    min-height: 760px;
+  }
+
+  .travel-introduction-grid {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 55px;
+  }
+
+  .travel-combination-grid {
+    gap: 70px;
+  }
+
+  .travel-services-cta-inner {
+    padding: 60px;
+  }
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .travel-services-container {
+    width: calc(100% - 40px);
+  }
+
+  .travel-services-hero {
+    min-height: 720px;
+  }
+
+  .travel-services-hero-content {
+    padding: 120px 0 110px;
+  }
+
+  .travel-services-hero h1 {
+    font-size: clamp(54px, 10vw, 78px);
+  }
+
+  .travel-introduction {
+    padding: 100px 0;
+  }
+
+  .travel-introduction-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .travel-section-label {
+    max-width: 250px;
+  }
+
+  .travel-services-list {
+    padding: 100px 0 110px;
+  }
+
+  .travel-services-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .travel-service-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-service-image {
+    height: 460px;
+  }
+
+  .travel-combination-section,
+  .travel-process-section {
+    padding: 100px 0;
+  }
+
+  .travel-combination-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .travel-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-process-item,
+  .travel-process-item:not(:first-child) {
+    min-height: auto;
+
+    padding: 35px 0;
+
+    border-right: none;
+    border-bottom: 1px solid var(--travel-border);
+  }
+
+  .travel-process-item:last-child {
+    border-bottom: none;
+  }
+
+  .travel-process-item h3 {
+    margin-top: 35px;
+  }
+
+  .travel-services-cta {
+    padding: 70px 0;
+  }
+
+  .travel-services-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+
+    padding: 55px 40px;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+  .travel-services-container {
+    width: calc(100% - 32px);
+  }
+
+  .travel-services-hero {
+    min-height: 720px;
+  }
+
+  .travel-services-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 28, 19, 0.88),
+        rgba(7, 28, 19, 0.55)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(7, 28, 19, 0.72),
+        transparent 55%
+      );
+  }
+
+  .travel-services-hero-content {
+    padding: 120px 0 100px;
+  }
+
+  .travel-services-eyebrow {
+    margin-bottom: 24px;
+
+    font-size: 9px;
+    letter-spacing: 0.16em;
+  }
+
+  .travel-services-eyebrow span {
+    width: 28px;
+  }
+
+  .travel-services-hero h1 {
+    font-size: clamp(48px, 14vw, 65px);
+    line-height: 0.98;
+  }
+
+  .travel-services-hero-content > p {
+    margin-top: 28px;
+
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .travel-services-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+
+    margin-top: 32px;
+  }
+
+  .travel-primary-button,
+  .travel-secondary-button {
+    width: 100%;
+  }
+
+  .travel-services-hero-note {
+    display: none;
+  }
+
+  .travel-introduction {
+    padding: 80px 0;
+  }
+
+  .travel-section-label {
+    font-size: 9px;
+  }
+
+  .travel-introduction-content h2,
+  .travel-services-heading h2,
+  .travel-combination-content h2,
+  .travel-process-heading h2,
+  .travel-services-cta h2 {
+    margin-top: 16px;
+
+    font-size: clamp(40px, 12vw, 55px);
+    line-height: 1.02;
+  }
+
+  .travel-introduction-content .travel-lead {
+    font-size: 17px;
+  }
+
+  .travel-introduction-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .travel-services-list {
+    padding: 80px 0 90px;
+  }
+
+  .travel-services-heading {
+    margin-bottom: 50px;
+  }
+
+  .travel-services-heading > p {
+    font-size: 14px;
+  }
+
+  .travel-service-cards {
+    gap: 24px;
+  }
+
+  .travel-service-image {
+    height: 300px;
+  }
+
+  .travel-service-card-content {
+    padding: 32px 25px 35px;
+  }
+
+  .travel-service-card h3 {
+    font-size: 34px;
+  }
+
+  .travel-service-card h4 {
+    font-size: 17px;
+  }
+
+  .travel-service-card-content > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .travel-service-includes li {
+    font-size: 12px;
+  }
+
+  .travel-combination-section {
+    padding: 85px 0;
+  }
+
+  .travel-combination-content p {
+    font-size: 14px;
+  }
+
+  .travel-stat {
+    padding: 20px 0;
+  }
+
+  .travel-process-section {
+    padding: 85px 0;
+  }
+
+  .travel-process-heading {
+    margin-bottom: 45px;
+  }
+
+  .travel-process-item {
+    padding: 30px 0 !important;
+  }
+
+  .travel-process-item h3 {
+    margin-top: 30px;
+    font-size: 27px;
+  }
+
+  .travel-process-item p {
+    font-size: 13px;
+  }
+
+  .travel-services-cta {
+    padding: 40px 0;
+  }
+
+  .travel-services-cta-inner {
+    padding: 45px 25px;
+  }
+
+  .travel-services-cta p {
+    font-size: 14px;
+  }
+
+  .travel-cta-actions {
+    width: 100%;
+  }
+
+  .travel-cta-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ============================================================
+   VERY SMALL PHONES
+============================================================ */
+
+@media (max-width: 380px) {
+
+  .travel-services-container {
+    width: calc(100% - 24px);
+  }
+
+  .travel-services-hero h1 {
+    font-size: 45px;
+  }
+
+  .travel-service-card-content {
+    padding: 28px 20px 32px;
+  }
+
+  .travel-service-card h3 {
+    font-size: 30px;
+  }
+
+  .travel-services-cta-inner {
+    padding: 38px 20px;
+  }
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .travel-services-hero-image {
+    animation: none;
+  }
+
+  .travel-service-card,
+  .travel-service-image img,
+  .travel-primary-button,
+  .travel-secondary-button,
+  .travel-dark-button,
+  .travel-cta-primary {
+    transition: none;
+  }
+}
+
+
+/* ============================================================
+   OPTIONAL IMAGE POSITIONING
+   Change these if your particular photos need adjustment.
+============================================================ */
+
+#passport .travel-service-image img {
+  object-position: center;
+}
+
+#lost-passport .travel-service-image img {
+  object-position: center;
+}
+
+#passport-renewal .travel-service-image img {
+  object-position: center;
+}
+
+#visa .travel-service-image img {
+  object-position: center;
+}
+
+#flights .travel-service-image img {
+  object-position: center;
+}
+
+#hotels .travel-service-image img {
+  object-position: center;
+}

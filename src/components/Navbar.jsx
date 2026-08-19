@@ -6,6 +6,12 @@ import {
   FiX,
   FiArrowUpRight,
   FiChevronDown,
+  FiFileText,
+  FiShield,
+  FiRefreshCw,
+  FiGlobe,
+  FiCalendar,
+  FiHome,
 } from "react-icons/fi";
 
 import "./Navbar.css";
@@ -13,11 +19,19 @@ import "./Navbar.css";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [destinationsOpen, setDestinationsOpen] = useState(false);
 
-  /* =====================================================
+  const [destinationsOpen, setDestinationsOpen] = useState(false);
+  const [travelServicesOpen, setTravelServicesOpen] = useState(false);
+
+  const [mobileDestinationsOpen, setMobileDestinationsOpen] =
+    useState(false);
+
+  const [mobileTravelServicesOpen, setMobileTravelServicesOpen] =
+    useState(false);
+
+  /* ==========================================================
      SCROLL EFFECT
-  ===================================================== */
+  ========================================================== */
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,9 +47,9 @@ export default function Navbar() {
     };
   }, []);
 
-  /* =====================================================
+  /* ==========================================================
      PREVENT BODY SCROLL WHEN MOBILE MENU IS OPEN
-  ===================================================== */
+  ========================================================== */
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -45,28 +59,43 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
-  /* =====================================================
-     CLOSE MENU
-  ===================================================== */
+  /* ==========================================================
+     CLOSE ALL MENUS
+  ========================================================== */
 
   const closeMenu = () => {
     setMenuOpen(false);
+
     setDestinationsOpen(false);
+    setTravelServicesOpen(false);
+
+    setMobileDestinationsOpen(false);
+    setMobileTravelServicesOpen(false);
   };
 
-  /* =====================================================
-     DESTINATION TOGGLE
-  ===================================================== */
+  /* ==========================================================
+     DESTINATIONS TOGGLE
+  ========================================================== */
 
-  const toggleDestinations = () => {
-    setDestinationsOpen((prev) => !prev);
+  const handleDestinationToggle = () => {
+    setDestinationsOpen((previous) => !previous);
+    setTravelServicesOpen(false);
+  };
+
+  /* ==========================================================
+     TRAVEL SERVICES TOGGLE
+  ========================================================== */
+
+  const handleTravelServicesToggle = () => {
+    setTravelServicesOpen((previous) => !previous);
+    setDestinationsOpen(false);
   };
 
   return (
     <>
-      {/* =====================================================
-          DESKTOP / MAIN NAVBAR
-      ===================================================== */}
+      {/* ======================================================
+          NAVBAR
+      ====================================================== */}
 
       <header
         className={`nylora-navbar ${
@@ -75,30 +104,40 @@ export default function Navbar() {
       >
         <div className="nylora-navbar-inner">
 
-          {/* =================================================
+          {/* ==================================================
               BRAND
-          ================================================= */}
+          ================================================== */}
 
           <Link
             to="/"
             className="nylora-brand"
             onClick={closeMenu}
-            aria-label="Nylora Safaris Home"
+            aria-label="Nylora Safaris - The Light Of The Nile"
           >
             <span className="nylora-brand-mark">
               N
             </span>
 
             <span className="nylora-brand-text">
-              <strong>NYLORA</strong>
-              <small>SAFARIS</small>
+
+              <strong>
+                NYLORA
+              </strong>
+
+              <small>
+                SAFARIS
+              </small>
+
+              <em>
+                The Light Of The Nile
+              </em>
+
             </span>
           </Link>
 
-
-          {/* =================================================
+          {/* ==================================================
               DESKTOP NAVIGATION
-          ================================================= */}
+          ================================================== */}
 
           <nav
             className="nylora-desktop-nav"
@@ -119,7 +158,6 @@ export default function Navbar() {
               Home
             </NavLink>
 
-
             {/* ABOUT */}
 
             <NavLink
@@ -133,73 +171,37 @@ export default function Navbar() {
               About
             </NavLink>
 
-
-            {/* =================================================
+            {/* ==================================================
                 DESTINATIONS DROPDOWN
-            ================================================= */}
+            ================================================== */}
 
             <div
               className="nylora-nav-dropdown"
-              onMouseEnter={() =>
-                setDestinationsOpen(true)
-              }
-              onMouseLeave={() =>
-                setDestinationsOpen(false)
-              }
+              onMouseEnter={() => setDestinationsOpen(true)}
+              onMouseLeave={() => setDestinationsOpen(false)}
             >
-
-              <div className="nylora-destination-trigger">
-
-                {/* DESTINATIONS IS NOW CLICKABLE */}
-
-                <NavLink
-                  to="/destinations"
-                  className={({ isActive }) =>
-                    `nylora-nav-link nylora-destination-link ${
-                      isActive ||
-                      window.location.pathname.startsWith(
-                        "/destinations/"
-                      )
-                        ? "active"
-                        : ""
-                    }`
-                  }
-                >
+              <button
+                type="button"
+                className="nylora-nav-dropdown-trigger"
+                onClick={handleDestinationToggle}
+                aria-expanded={destinationsOpen}
+              >
+                <span>
                   Destinations
-                </NavLink>
+                </span>
 
-
-                {/* CHEVRON */}
-
-                <button
-                  type="button"
-                  className="nylora-destination-arrow"
-                  onClick={toggleDestinations}
-                  aria-label="Open destinations menu"
-                  aria-expanded={destinationsOpen}
-                >
-                  <FiChevronDown
-                    className={
-                      destinationsOpen
-                        ? "rotate"
-                        : ""
-                    }
-                  />
-                </button>
-
-              </div>
-
-
-              {/* =================================================
-                  DESKTOP DROPDOWN
-              ================================================= */}
+                <FiChevronDown
+                  className={
+                    destinationsOpen ? "rotate" : ""
+                  }
+                />
+              </button>
 
               <div
                 className={`nylora-dropdown-menu ${
                   destinationsOpen ? "show" : ""
                 }`}
               >
-
                 <div className="nylora-dropdown-heading">
 
                   <span>
@@ -208,20 +210,37 @@ export default function Navbar() {
 
                   <p>
                     Exceptional journeys through
-                    Uganda & Rwanda.
+                    Uganda and Rwanda.
                   </p>
 
                 </div>
 
+                <Link
+                  to="/destinations"
+                  onClick={closeMenu}
+                  className="nylora-dropdown-overview"
+                >
+                  <span>
+                    <strong>
+                      All Destinations
+                    </strong>
 
-                {/* UGANDA */}
+                    <small>
+                      Explore Uganda & Rwanda
+                    </small>
+                  </span>
+
+                  <FiArrowUpRight />
+                </Link>
 
                 <Link
                   to="/destinations/uganda"
                   onClick={closeMenu}
                 >
                   <span>
-                    <strong>Uganda</strong>
+                    <strong>
+                      Uganda
+                    </strong>
 
                     <small>
                       Gorillas · Wildlife · Wilderness
@@ -231,15 +250,14 @@ export default function Navbar() {
                   <FiArrowUpRight />
                 </Link>
 
-
-                {/* RWANDA */}
-
                 <Link
                   to="/destinations/rwanda"
                   onClick={closeMenu}
                 >
                   <span>
-                    <strong>Rwanda</strong>
+                    <strong>
+                      Rwanda
+                    </strong>
 
                     <small>
                       Gorillas · Volcanoes · Luxury
@@ -248,24 +266,8 @@ export default function Navbar() {
 
                   <FiArrowUpRight />
                 </Link>
-
-
-                {/* ALL DESTINATIONS */}
-
-                <Link
-                  to="/destinations"
-                  onClick={closeMenu}
-                  className="dropdown-view-all"
-                >
-                  View all destinations
-
-                  <FiArrowUpRight />
-                </Link>
-
               </div>
-
             </div>
-
 
             {/* SAFARIS */}
 
@@ -280,7 +282,6 @@ export default function Navbar() {
               Safaris
             </NavLink>
 
-
             {/* GORILLA TREKKING */}
 
             <NavLink
@@ -294,6 +295,171 @@ export default function Navbar() {
               Gorilla Trekking
             </NavLink>
 
+            {/* ==================================================
+                TRAVEL SERVICES DROPDOWN
+            ================================================== */}
+
+            <div
+              className="nylora-nav-dropdown"
+              onMouseEnter={() => setTravelServicesOpen(true)}
+              onMouseLeave={() => setTravelServicesOpen(false)}
+            >
+              <button
+                type="button"
+                className="nylora-nav-dropdown-trigger"
+                onClick={handleTravelServicesToggle}
+                aria-expanded={travelServicesOpen}
+              >
+                <span>
+                  Travel Services
+                </span>
+
+                <FiChevronDown
+                  className={
+                    travelServicesOpen ? "rotate" : ""
+                  }
+                />
+              </button>
+
+              <div
+                className={`nylora-dropdown-menu nylora-services-dropdown ${
+                  travelServicesOpen ? "show" : ""
+                }`}
+              >
+                <div className="nylora-dropdown-heading">
+
+                  <span>
+                    TRAVEL SUPPORT
+                  </span>
+
+                  <p>
+                    Everything you need before
+                    and during your journey.
+                  </p>
+
+                </div>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                  className="nylora-dropdown-overview"
+                >
+                  <span>
+                    <strong>
+                      All Travel Services
+                    </strong>
+
+                    <small>
+                      Explore our complete travel support
+                    </small>
+                  </span>
+
+                  <FiArrowUpRight />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                >
+                  <span>
+                    <strong>
+                      Passport Application
+                    </strong>
+
+                    <small>
+                      Application assistance
+                    </small>
+                  </span>
+
+                  <FiFileText />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                >
+                  <span>
+                    <strong>
+                      Lost Passport Recovery
+                    </strong>
+
+                    <small>
+                      Replacement guidance
+                    </small>
+                  </span>
+
+                  <FiShield />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                >
+                  <span>
+                    <strong>
+                      Passport Renewal
+                    </strong>
+
+                    <small>
+                      Renewal assistance
+                    </small>
+                  </span>
+
+                  <FiRefreshCw />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                >
+                  <span>
+                    <strong>
+                      Visa Applications
+                    </strong>
+
+                    <small>
+                      Visa preparation support
+                    </small>
+                  </span>
+
+                  <FiGlobe />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                >
+                  <span>
+                    <strong>
+                      Flight Ticket Booking
+                    </strong>
+
+                    <small>
+                      International & regional flights
+                    </small>
+                  </span>
+
+                  <FiCalendar />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                >
+                  <span>
+                    <strong>
+                      Hotel Bookings
+                    </strong>
+
+                    <small>
+                      Accommodation arrangements
+                    </small>
+                  </span>
+
+                  <FiHome />
+                </Link>
+              </div>
+            </div>
 
             {/* CONTACT */}
 
@@ -310,38 +476,35 @@ export default function Navbar() {
 
           </nav>
 
-
-          {/* =================================================
+          {/* ==================================================
               DESKTOP CTA
-          ================================================= */}
+          ================================================== */}
 
           <div className="nylora-navbar-actions">
 
-            <a
-              href="https://wa.me/256786349505"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/booking"
               className="nylora-enquire-btn"
+              onClick={closeMenu}
             >
               <span>
                 Plan Your Safari
               </span>
 
               <FiArrowUpRight />
-            </a>
+            </Link>
 
           </div>
 
-
-          {/* =================================================
-              MOBILE MENU BUTTON
-          ================================================= */}
+          {/* ==================================================
+              MOBILE TOGGLE
+          ================================================== */}
 
           <button
             type="button"
             className="nylora-mobile-toggle"
             onClick={() =>
-              setMenuOpen((prev) => !prev)
+              setMenuOpen((previous) => !previous)
             }
             aria-label={
               menuOpen
@@ -360,22 +523,44 @@ export default function Navbar() {
         </div>
       </header>
 
-
-      {/* =====================================================
+      {/* ======================================================
           MOBILE MENU
-      ===================================================== */}
+      ====================================================== */}
 
       <div
         className={`nylora-mobile-menu ${
           menuOpen ? "open" : ""
         }`}
       >
-
         <div className="nylora-mobile-menu-inner">
 
-          {/* =================================================
-              MOBILE INTRO
-          ================================================= */}
+          {/* MOBILE BRAND */}
+
+          <div className="nylora-mobile-brand">
+
+            <span className="nylora-mobile-brand-mark">
+              N
+            </span>
+
+            <div className="nylora-mobile-brand-text">
+
+              <strong>
+                NYLORA
+              </strong>
+
+              <span>
+                SAFARIS
+              </span>
+
+              <em>
+                The Light Of The Nile
+              </em>
+
+            </div>
+
+          </div>
+
+          {/* MOBILE INTRO */}
 
           <div className="nylora-mobile-intro">
 
@@ -390,14 +575,11 @@ export default function Navbar() {
 
           </div>
 
-
-          {/* =================================================
-              MOBILE NAVIGATION
-          ================================================= */}
+          {/* MOBILE NAVIGATION */}
 
           <nav className="nylora-mobile-nav">
 
-            {/* HOME */}
+            {/* 01 HOME */}
 
             <NavLink
               to="/"
@@ -407,15 +589,14 @@ export default function Navbar() {
                 isActive ? "active" : ""
               }
             >
-              <span>01</span>
+              <span>
+                01
+              </span>
 
-              <strong>
-                Home
-              </strong>
+              Home
             </NavLink>
 
-
-            {/* ABOUT */}
+            {/* 02 ABOUT */}
 
             <NavLink
               to="/about"
@@ -424,140 +605,112 @@ export default function Navbar() {
                 isActive ? "active" : ""
               }
             >
-              <span>02</span>
+              <span>
+                02
+              </span>
 
-              <strong>
-                About
-              </strong>
+              About
             </NavLink>
 
+            {/* ==================================================
+                03 DESTINATIONS
+            ================================================== */}
 
-            {/* =================================================
-                MOBILE DESTINATIONS
-            ================================================= */}
+            <div className="nylora-mobile-destinations">
 
-            <div
-              className={`nylora-mobile-destinations ${
-                destinationsOpen
-                  ? "open"
-                  : ""
-              }`}
-            >
+              <button
+                type="button"
+                className="nylora-mobile-destination-toggle"
+                onClick={() =>
+                  setMobileDestinationsOpen(
+                    (previous) => !previous
+                  )
+                }
+                aria-expanded={
+                  mobileDestinationsOpen
+                }
+              >
+                <span>
+                  03
+                </span>
 
-              {/* MAIN DESTINATIONS ROW */}
+                <strong>
+                  Destinations
+                </strong>
 
-              <div className="nylora-mobile-destination-row">
-
-                {/* DESTINATIONS LINK */}
-
-                <NavLink
-                  to="/destinations"
-                  onClick={closeMenu}
-                  className={({ isActive }) =>
-                    isActive ||
-                    window.location.pathname.startsWith(
-                      "/destinations/"
-                    )
-                      ? "active"
+                <FiChevronDown
+                  className={
+                    mobileDestinationsOpen
+                      ? "rotate"
                       : ""
                   }
-                >
-                  <span>03</span>
+                />
+              </button>
 
-                  <strong>
-                    Destinations
-                  </strong>
-                </NavLink>
-
-
-                {/* EXPAND BUTTON */}
-
-                <button
-                  type="button"
-                  className="nylora-mobile-destination-toggle"
-                  onClick={toggleDestinations}
-                  aria-label="Expand destinations"
-                  aria-expanded={
-                    destinationsOpen
-                  }
-                >
-                  <FiChevronDown
-                    className={
-                      destinationsOpen
-                        ? "rotate"
-                        : ""
-                    }
-                  />
-                </button>
-
-              </div>
-
-
-              {/* =================================================
-                  MOBILE DESTINATION SUBMENU
-              ================================================= */}
-
-              <div className="nylora-mobile-destination-submenu">
-
-                {/* ALL DESTINATIONS */}
-
+              <div
+                className={`nylora-mobile-destination-submenu ${
+                  mobileDestinationsOpen
+                    ? "open"
+                    : ""
+                }`}
+              >
                 <Link
                   to="/destinations"
                   onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
                 >
                   <span>
-                    <small>
-                      EXPLORE
-                    </small>
+                    <strong>
+                      All Destinations
+                    </strong>
 
-                    All Destinations
+                    <small>
+                      Uganda & Rwanda
+                    </small>
                   </span>
 
                   <FiArrowUpRight />
                 </Link>
-
-
-                {/* UGANDA */}
 
                 <Link
                   to="/destinations/uganda"
                   onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
                 >
                   <span>
-                    <small>
-                      DESTINATION 01
-                    </small>
+                    <strong>
+                      Uganda
+                    </strong>
 
-                    Uganda
+                    <small>
+                      Wildlife · Gorillas · Adventure
+                    </small>
                   </span>
 
                   <FiArrowUpRight />
                 </Link>
-
-
-                {/* RWANDA */}
 
                 <Link
                   to="/destinations/rwanda"
                   onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
                 >
                   <span>
-                    <small>
-                      DESTINATION 02
-                    </small>
+                    <strong>
+                      Rwanda
+                    </strong>
 
-                    Rwanda
+                    <small>
+                      Gorillas · Volcanoes · Luxury
+                    </small>
                   </span>
 
                   <FiArrowUpRight />
                 </Link>
-
               </div>
-
             </div>
 
-
-            {/* SAFARIS */}
+            {/* 04 SAFARIS */}
 
             <NavLink
               to="/safaris"
@@ -566,15 +719,14 @@ export default function Navbar() {
                 isActive ? "active" : ""
               }
             >
-              <span>04</span>
+              <span>
+                04
+              </span>
 
-              <strong>
-                Safaris
-              </strong>
+              Safaris
             </NavLink>
 
-
-            {/* GORILLA TREKKING */}
+            {/* 05 GORILLA TREKKING */}
 
             <NavLink
               to="/gorilla-trekking"
@@ -583,15 +735,186 @@ export default function Navbar() {
                 isActive ? "active" : ""
               }
             >
-              <span>05</span>
+              <span>
+                05
+              </span>
 
-              <strong>
-                Gorilla Trekking
-              </strong>
+              Gorilla Trekking
             </NavLink>
 
+            {/* ==================================================
+                06 TRAVEL SERVICES
+            ================================================== */}
 
-            {/* CONTACT */}
+            <div className="nylora-mobile-destinations nylora-mobile-services">
+
+              <button
+                type="button"
+                className="nylora-mobile-destination-toggle"
+                onClick={() =>
+                  setMobileTravelServicesOpen(
+                    (previous) => !previous
+                  )
+                }
+                aria-expanded={
+                  mobileTravelServicesOpen
+                }
+              >
+                <span>
+                  06
+                </span>
+
+                <strong>
+                  Travel Services
+                </strong>
+
+                <FiChevronDown
+                  className={
+                    mobileTravelServicesOpen
+                      ? "rotate"
+                      : ""
+                  }
+                />
+              </button>
+
+              <div
+                className={`nylora-mobile-destination-submenu ${
+                  mobileTravelServicesOpen
+                    ? "open"
+                    : ""
+                }`}
+              >
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
+                >
+                  <span>
+                    <strong>
+                      All Travel Services
+                    </strong>
+
+                    <small>
+                      Complete travel support
+                    </small>
+                  </span>
+
+                  <FiArrowUpRight />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
+                >
+                  <span>
+                    <strong>
+                      Passport Application
+                    </strong>
+
+                    <small>
+                      Application assistance
+                    </small>
+                  </span>
+
+                  <FiFileText />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
+                >
+                  <span>
+                    <strong>
+                      Lost Passport Recovery
+                    </strong>
+
+                    <small>
+                      Replacement guidance
+                    </small>
+                  </span>
+
+                  <FiShield />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
+                >
+                  <span>
+                    <strong>
+                      Passport Renewal
+                    </strong>
+
+                    <small>
+                      Renewal assistance
+                    </small>
+                  </span>
+
+                  <FiRefreshCw />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
+                >
+                  <span>
+                    <strong>
+                      Visa Applications
+                    </strong>
+
+                    <small>
+                      Visa preparation
+                    </small>
+                  </span>
+
+                  <FiGlobe />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
+                >
+                  <span>
+                    <strong>
+                      Flight Ticket Booking
+                    </strong>
+
+                    <small>
+                      International & regional
+                    </small>
+                  </span>
+
+                  <FiCalendar />
+                </Link>
+
+                <Link
+                  to="/travel-services"
+                  onClick={closeMenu}
+                  className="nylora-mobile-destination-row"
+                >
+                  <span>
+                    <strong>
+                      Hotel Bookings
+                    </strong>
+
+                    <small>
+                      Accommodation arrangements
+                    </small>
+                  </span>
+
+                  <FiHome />
+                </Link>
+
+              </div>
+            </div>
+
+            {/* 07 CONTACT */}
 
             <NavLink
               to="/contact"
@@ -600,26 +923,23 @@ export default function Navbar() {
                 isActive ? "active" : ""
               }
             >
-              <span>06</span>
+              <span>
+                07
+              </span>
 
-              <strong>
-                Contact
-              </strong>
+              Contact
             </NavLink>
 
           </nav>
 
-
-          {/* =================================================
+          {/* ==================================================
               MOBILE BOTTOM
-          ================================================= */}
+          ================================================== */}
 
           <div className="nylora-mobile-bottom">
 
-            <a
-              href="https://wa.me/256786349505"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/booking"
               className="nylora-mobile-cta"
               onClick={closeMenu}
             >
@@ -628,8 +948,7 @@ export default function Navbar() {
               </span>
 
               <FiArrowUpRight />
-            </a>
-
+            </Link>
 
             <div className="nylora-mobile-contact">
 
@@ -646,7 +965,6 @@ export default function Navbar() {
           </div>
 
         </div>
-
       </div>
     </>
   );

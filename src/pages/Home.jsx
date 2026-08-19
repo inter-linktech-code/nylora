@@ -5,9 +5,20 @@ import {
   FiArrowRight,
   FiArrowUpRight,
   FiMapPin,
+  FiCompass,
   FiChevronLeft,
   FiChevronRight,
+  FiPlay,
   FiStar,
+  FiBriefcase,
+  FiFileText,
+  FiShield,
+  FiRefreshCw,
+  FiGlobe,
+  FiCalendar,
+  FiHome,
+  FiCheck,
+  FiSearch,
 } from "react-icons/fi";
 
 import "./Home.css";
@@ -1117,6 +1128,144 @@ export default function Home() {
         </div>
 
       </section>
+
+
+      {/* ======================================================
+    TRAVEL SERVICES
+====================================================== */}
+
+<section className="travel-services-preview">
+
+  <div className="home-section-container">
+
+    <div className="travel-services-header">
+
+      <div>
+
+        <span className="section-kicker">
+          MORE THAN A SAFARI
+        </span>
+
+        <h2>
+          Everything you need
+          <br />
+          <em>before you fly.</em>
+        </h2>
+
+      </div>
+
+      <div className="travel-services-intro">
+
+        <p>
+          Your journey does not begin when you arrive in the
+          bush. From passports and visas to flights and hotels,
+          our travel services help make the entire journey
+          simple, seamless and beautifully organised.
+        </p>
+
+        <Link
+          to="/travel-services"
+          className="travel-services-view-link"
+        >
+          Explore Travel Services
+          <FiArrowUpRight />
+        </Link>
+
+      </div>
+
+    </div>
+
+
+    <div className="travel-services-grid">
+
+      <article className="travel-service-card">
+
+        <span className="travel-service-number">
+          01
+        </span>
+
+        <div className="travel-service-icon">
+          <FiCompass />
+        </div>
+
+        <h3>
+          Passport Services
+        </h3>
+
+        <p>
+          Assistance with passport applications, renewals
+          and lost passport recovery so you can travel
+          with confidence.
+        </p>
+
+        <Link to="/travel-services">
+          Passport assistance
+          <FiArrowUpRight />
+        </Link>
+
+      </article>
+
+
+      <article className="travel-service-card">
+
+        <span className="travel-service-number">
+          02
+        </span>
+
+        <div className="travel-service-icon">
+          <FiMapPin />
+        </div>
+
+        <h3>
+          Visa Applications
+        </h3>
+
+        <p>
+          Guidance and support with visa applications for
+          your destination, helping you prepare the
+          documentation required for your journey.
+        </p>
+
+        <Link to="/travel-services">
+          Visa assistance
+          <FiArrowUpRight />
+        </Link>
+
+      </article>
+
+
+      <article className="travel-service-card">
+
+        <span className="travel-service-number">
+          03
+        </span>
+
+        <div className="travel-service-icon">
+          <FiArrowRight />
+        </div>
+
+        <h3>
+          Flights & Hotels
+        </h3>
+
+        <p>
+          Flight ticket booking and carefully selected hotel
+          accommodation arranged around your safari or
+          wider East African itinerary.
+        </p>
+
+        <Link to="/travel-services">
+          Plan your travel
+          <FiArrowUpRight />
+        </Link>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
 
 
       {/* ======================================================

@@ -11,124 +11,56 @@ import Uganda from "./pages/Uganda";
 import Rwanda from "./pages/Rwanda";
 import Booking from "./pages/Booking";
 import GorillaTrekking from "./pages/GorillaTrekking";
+import TravelServices from "./pages/TravelServices";
 import Contact from "./pages/Contact";
 
 export default function App() {
   return (
     <div className="app">
 
-      {/* =====================================================
-          NAVIGATION
-      ===================================================== */}
-
       <Navbar />
 
+      <Routes>
 
-      {/* =====================================================
-          PAGE CONTENT
-      ===================================================== */}
+        <Route path="/" element={<Home />} />
 
-      <main>
+        <Route path="/about" element={<About />} />
 
-        <Routes>
+        <Route path="/safaris" element={<Safaris />} />
 
-          {/* =================================================
-              HOME
-          ================================================= */}
+        <Route path="/destinations" element={<Destinations />} />
 
-          <Route
-            path="/"
-            element={<Home />}
-          />
+        <Route
+          path="/destinations/uganda"
+          element={<Uganda />}
+        />
 
+        <Route
+          path="/destinations/rwanda"
+          element={<Rwanda />}
+        />
 
-          {/* =================================================
-              ABOUT
-          ================================================= */}
+        <Route
+          path="/gorilla-trekking"
+          element={<GorillaTrekking />}
+        />
 
-          <Route
-            path="/about"
-            element={<About />}
-          />
+        <Route
+          path="/travel-services"
+          element={<TravelServices />}
+        />
 
+        <Route
+          path="/booking"
+          element={<Booking />}
+        />
 
-          {/* =================================================
-              SAFARIS
-          ================================================= */}
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
 
-          <Route
-            path="/safaris"
-            element={<Safaris />}
-          />
-
-
-          {/* =================================================
-              DESTINATIONS
-          ================================================= */}
-
-          <Route
-            path="/destinations"
-            element={<Destinations />}
-          />
-
-
-          {/* =================================================
-              UGANDA
-          ================================================= */}
-
-          <Route
-            path="/destinations/uganda"
-            element={<Uganda />}
-          />
-
-
-          {/* =================================================
-              RWANDA
-          ================================================= */}
-
-          <Route
-            path="/destinations/rwanda"
-            element={<Rwanda />}
-          />
-
-
-          {/* =================================================
-              GORILLA & GOLDEN MONKEY TREKKING
-          ================================================= */}
-
-          <Route
-            path="/gorilla-trekking"
-            element={<GorillaTrekking />}
-          />
-
-
-          {/* =================================================
-              BOOKING
-          ================================================= */}
-
-          <Route
-            path="/booking"
-            element={<Booking />}
-          />
-
-
-          {/* =================================================
-              CONTACT
-          ================================================= */}
-
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
-
-        </Routes>
-
-      </main>
-
-
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
+      </Routes>
 
       <Footer />
 
