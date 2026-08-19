@@ -54,7 +54,7 @@ import budongo from "../assets/budongo-forest.jpg";
 import kasubi from "../assets/kasubi-tombs.jpg";
 
 import kampala from "../assets/kampala.jpg";
-import jinja from "../assets/jinja.jpg";
+import jinja from "../assets/Jinja.jpg";
 import fortPortal from "../assets/fort-portal.jpg";
 
 import kigali from "../assets/kigali.jpg";
