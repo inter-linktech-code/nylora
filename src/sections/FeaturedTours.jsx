@@ -1,6 +1,6 @@
 import "./FeaturedTours.css";
 import { Link } from "react-router-dom";
-import { tours } from "../data/toursdata";
+import { tours } from "../data/toursData";
 
 export default function FeaturedTours() {
   const whatsappNumber = "25670000000";
