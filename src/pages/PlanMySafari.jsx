@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { tours } from "../data/toursdata";
+import { tours } from "../data/toursData";
 import "./Planner.css";
 
 export default function PlanMySafari() {
