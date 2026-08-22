@@ -17,7 +17,6 @@ import "./TravelServices.css";
 /* ============================================================
    IMAGES
    All images are located directly inside src/assets/
-   Rename these files to match your actual assets.
 ============================================================ */
 
 import passportImage from "../assets/passport-service.jpg";
@@ -27,6 +26,12 @@ import visaImage from "../assets/visa-application.jpg";
 import hotelImage from "../assets/hotel-booking.jpg";
 import flightImage from "../assets/flight-booking.jpg";
 import travelHero from "../assets/Jinja.jpg";
+
+/* ============================================================
+   WHATSAPP CONFIGURATION
+============================================================ */
+
+const WHATSAPP_NUMBER = "256752932498";
 
 /* ============================================================
    SERVICES DATA
@@ -39,16 +44,17 @@ const services = [
     icon: FiFileText,
     category: "PASSPORT SERVICES",
     title: "Passport Application",
-    shortTitle: "Apply for your passport with confidence.",
+    shortTitle:
+      "Professional assistance with your passport application.",
     description:
-      "Preparing for your first international journey starts with having the right travel documents. Nylora Safaris provides practical assistance to travellers preparing their passport applications, helping you understand the process and organize the documentation required before submission.",
+      "Preparing for international travel starts with having the right travel documents. Nylora Safaris offers a professional passport application assistance service, helping clients prepare the required documentation and navigate the application process with greater confidence.",
     image: passportImage,
     points: [
-      "Guidance on passport application requirements",
-      "Assistance preparing supporting documentation",
-      "Application preparation guidance",
+      "Passport application preparation",
+      "Supporting documentation assistance",
+      "Application requirements guidance",
       "Travel document checklist",
-      "Support throughout the preparation process",
+      "Professional application support",
     ],
   },
 
@@ -58,16 +64,17 @@ const services = [
     icon: FiShield,
     category: "PASSPORT SERVICES",
     title: "Lost Passport Recovery",
-    shortTitle: "Travel support when the unexpected happens.",
+    shortTitle:
+      "Professional assistance when your passport is lost.",
     description:
-      "Losing a passport can be stressful, especially when you are travelling or preparing for an important journey. Our team can guide you through the practical steps involved in reporting a lost passport and preparing for replacement documentation.",
+      "Losing a passport can be stressful, particularly when you have upcoming travel plans. Our paid passport recovery service provides practical assistance with the steps required to report the loss, prepare replacement documentation and move forward with the recovery process.",
     image: lostPassportImage,
     points: [
-      "Guidance following passport loss",
-      "Information on replacement procedures",
-      "Documentation preparation support",
-      "Travel assistance during the recovery process",
-      "Practical guidance for travellers abroad",
+      "Lost passport recovery assistance",
+      "Replacement procedure guidance",
+      "Supporting documentation preparation",
+      "Application process assistance",
+      "Travel document recovery support",
     ],
   },
 
@@ -77,16 +84,17 @@ const services = [
     icon: FiRefreshCw,
     category: "PASSPORT SERVICES",
     title: "Passport Renewal",
-    shortTitle: "Keep your travel documents ready for your next journey.",
+    shortTitle:
+      "Professional support for your passport renewal.",
     description:
-      "An expired or soon-to-expire passport should never become the reason your travel plans are delayed. Nylora helps travellers prepare for passport renewal by providing guidance on requirements, supporting documents and the steps involved in the renewal process.",
+      "An expired or soon-to-expire passport can interfere with carefully planned travel. Nylora provides a professional passport renewal service, assisting clients with document preparation, application requirements and the renewal process.",
     image: passportRenewalImage,
     points: [
       "Passport renewal preparation",
-      "Documentation guidance",
+      "Supporting documentation assistance",
       "Application process assistance",
       "Travel document checks",
-      "Planning support before international travel",
+      "Professional renewal support",
     ],
   },
 
@@ -96,16 +104,17 @@ const services = [
     icon: FiGlobe,
     category: "VISA SERVICES",
     title: "Visa Applications",
-    shortTitle: "Navigate your visa preparation with greater confidence.",
+    shortTitle:
+      "Professional visa application preparation and support.",
     description:
-      "Different destinations have different entry requirements. We help travellers understand the visa preparation process, organize supporting documents and prepare for applications according to the requirements of their intended destination.",
+      "Visa requirements vary from one destination to another. Our visa application service provides professional assistance with understanding requirements, preparing supporting documents and organizing the information required for your intended destination.",
     image: visaImage,
     points: [
-      "Visa requirement guidance",
-      "Application preparation assistance",
-      "Supporting document checklist",
-      "Travel documentation review",
-      "Destination-specific preparation guidance",
+      "Visa application preparation",
+      "Destination requirement guidance",
+      "Supporting document preparation",
+      "Application information review",
+      "Professional visa support",
     ],
   },
 
@@ -115,15 +124,16 @@ const services = [
     icon: FiCalendar,
     category: "FLIGHT SERVICES",
     title: "Flight Ticket Booking",
-    shortTitle: "From Kampala to wherever your journey takes you.",
+    shortTitle:
+      "Professional flight booking for local and international journeys.",
     description:
-      "Whether you are travelling for a safari, business, family visit or international holiday, we can assist with arranging flight tickets that fit your itinerary. Our team helps travellers explore suitable routes and coordinate flights with their wider travel plans.",
+      "Whether you are travelling for a safari, business, family visit or international holiday, Nylora provides a flight booking service designed around your itinerary. We assist with arranging suitable routes and coordinating your flights with the wider journey.",
     image: flightImage,
     points: [
-      "Domestic flight arrangements",
+      "Domestic flight bookings",
       "Regional East African flights",
       "International flight bookings",
-      "Travel itinerary coordination",
+      "Itinerary coordination",
       "Departure and arrival planning",
     ],
   },
@@ -134,20 +144,40 @@ const services = [
     icon: FiHome,
     category: "ACCOMMODATION",
     title: "Hotel Bookings",
-    shortTitle: "Beautiful places to stay, wherever you travel.",
+    shortTitle:
+      "Professional accommodation arrangements for your journey.",
     description:
-      "Accommodation is an important part of every journey. From luxury safari lodges and intimate forest retreats to city hotels and convenient airport stays, we help travellers arrange accommodation that complements their itinerary.",
+      "Accommodation is an important part of every journey. Nylora provides a professional hotel and accommodation booking service, helping clients arrange suitable stays ranging from luxury safari lodges and forest retreats to city hotels and convenient airport accommodation.",
     image: hotelImage,
     points: [
       "Safari lodge reservations",
       "Luxury hotel bookings",
-      "City accommodation",
+      "City accommodation arrangements",
       "Pre- and post-safari stays",
-      "Accommodation planning around your itinerary",
+      "Accommodation planning",
     ],
   },
 ];
 
+/* ============================================================
+   WHATSAPP SERVICE REQUEST
+============================================================ */
+
+function requestServiceOnWhatsApp(service) {
+  const message = `Hello Nylora Safaris,
+
+I would like to request your ${service.title} service.
+
+Please share the requirements, applicable service fee, and the next steps.
+
+Thank you.`;
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    message
+  )}`;
+
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+}
 
 /* ============================================================
    TRAVEL SERVICES PAGE
@@ -188,9 +218,10 @@ export default function TravelServices() {
             </h1>
 
             <p>
-              Beyond unforgettable safaris, Nylora provides practical
-              travel support to help make your journey from Uganda
-              to the world simpler, more organized and more seamless.
+              Beyond unforgettable safaris, Nylora provides
+              professional travel services designed to make your
+              journey from Uganda to the world simpler, more
+              organized and more seamless.
             </p>
 
             <div className="travel-services-hero-actions">
@@ -220,7 +251,7 @@ export default function TravelServices() {
             <span>01</span>
 
             <p>
-              Travel assistance
+              Professional travel services
               <br />
               beyond the safari.
             </p>
@@ -265,16 +296,34 @@ export default function TravelServices() {
               <p className="travel-lead">
                 A great journey involves more than choosing where
                 you want to go. There are passports to prepare,
-                visas to understand, flights to arrange and places
+                visas to process, flights to arrange and places
                 to stay.
               </p>
 
               <p>
-                Nylora Safaris brings these practical travel services
-                together with our safari expertise, giving travellers
-                one experienced team to turn to when preparing for
-                their next adventure.
+                Nylora Safaris combines professional travel services
+                with our safari expertise, giving clients one
+                experienced team to turn to when preparing for
+                their next journey.
               </p>
+
+              <div className="travel-paid-service-note">
+
+                <FiCheck />
+
+                <span>
+                  <strong>
+                    Professional services, arranged for you.
+                  </strong>
+
+                  <small>
+                    Service fees and applicable third-party
+                    charges are confirmed before your service
+                    begins.
+                  </small>
+                </span>
+
+              </div>
 
             </div>
 
@@ -301,7 +350,7 @@ export default function TravelServices() {
             <div>
 
               <span className="travel-kicker">
-                TRAVEL SUPPORT
+                PROFESSIONAL TRAVEL SERVICES
               </span>
 
               <h2>
@@ -313,14 +362,18 @@ export default function TravelServices() {
             </div>
 
             <p>
-              Whether you are travelling across East Africa or
-              preparing for an international journey, our services
-              are designed to remove unnecessary complications
-              from your travel planning.
+              From travel documentation and visa preparation to
+              flights and accommodation, our professional services
+              are designed to take care of the practical details
+              surrounding your journey.
             </p>
 
           </div>
 
+
+          {/* ====================================================
+              SERVICE CARDS
+          ==================================================== */}
 
           <div className="travel-service-cards">
 
@@ -334,6 +387,8 @@ export default function TravelServices() {
                   id={service.id}
                   className="travel-service-card"
                 >
+
+                  {/* IMAGE */}
 
                   <div className="travel-service-image">
 
@@ -350,6 +405,8 @@ export default function TravelServices() {
 
                   </div>
 
+
+                  {/* CONTENT */}
 
                   <div className="travel-service-card-content">
 
@@ -377,19 +434,28 @@ export default function TravelServices() {
                     <div className="travel-service-divider" />
 
 
+                    {/* SERVICE INCLUDES */}
+
                     <div className="travel-service-includes">
 
                       <span>
-                        WHAT WE HELP WITH
+                        OUR SERVICE INCLUDES
                       </span>
 
                       <ul>
 
                         {service.points.map((point) => (
+
                           <li key={point}>
+
                             <FiCheck />
-                            <span>{point}</span>
+
+                            <span>
+                              {point}
+                            </span>
+
                           </li>
+
                         ))}
 
                       </ul>
@@ -397,18 +463,49 @@ export default function TravelServices() {
                     </div>
 
 
-                    <Link
-                      to="/contact"
+                    {/* PAID SERVICE NOTICE */}
+
+                    <div className="travel-service-fee-note">
+
+                      <span>
+                        PROFESSIONAL SERVICE
+                      </span>
+
+                      <p>
+                        This is a paid service. Our team will
+                        confirm the applicable service fee and
+                        any third-party charges with you before
+                        proceeding.
+                      </p>
+
+                    </div>
+
+
+                    {/* =================================================
+                        WHATSAPP REQUEST BUTTON
+                    ================================================= */}
+
+                    <button
+                      type="button"
                       className="travel-service-link"
+                      onClick={() =>
+                        requestServiceOnWhatsApp(service)
+                      }
                     >
-                      Enquire About This Service
+
+                      <span>
+                        Request This Service
+                      </span>
+
                       <FiArrowUpRight />
-                    </Link>
+
+                    </button>
 
                   </div>
 
                 </article>
               );
+
             })}
 
           </div>
@@ -447,9 +544,9 @@ export default function TravelServices() {
               </p>
 
               <p>
-                Our team can help coordinate the practical elements
-                of your trip alongside your safari itinerary, giving
-                you a more connected travel experience from departure
+                Our team can coordinate the practical elements of
+                your trip alongside your safari itinerary, creating
+                a more connected travel experience from departure
                 to arrival.
               </p>
 
@@ -506,14 +603,20 @@ export default function TravelServices() {
           <div className="travel-process-heading">
 
             <span className="travel-kicker">
-              SIMPLE PROCESS
+              OUR SERVICE PROCESS
             </span>
 
             <h2>
-              Tell us where you're going.
+              Tell us what you need.
               <br />
-              <em>We'll help with the rest.</em>
+              <em>We'll take it from there.</em>
             </h2>
+
+            <p>
+              Every service begins with understanding what you need.
+              Before any work begins, we explain the service,
+              applicable fees and any additional charges involved.
+            </p>
 
           </div>
 
@@ -525,12 +628,12 @@ export default function TravelServices() {
               <span>01</span>
 
               <h3>
-                Tell us your plans
+                Tell us what you need
               </h3>
 
               <p>
-                Share your destination, travel dates and what
-                you need help arranging.
+                Share your destination, travel dates and the
+                service you would like us to arrange.
               </p>
 
             </div>
@@ -541,12 +644,12 @@ export default function TravelServices() {
               <span>02</span>
 
               <h3>
-                We help organize
+                Receive your quotation
               </h3>
 
               <p>
-                Our team guides you through the relevant travel
-                service and preparation requirements.
+                We explain the applicable service fee and any
+                relevant third-party costs before proceeding.
               </p>
 
             </div>
@@ -557,12 +660,57 @@ export default function TravelServices() {
               <span>03</span>
 
               <h3>
-                Travel with confidence
+                We arrange the service
               </h3>
 
               <p>
-                With the practical details taken care of, you can
-                focus on enjoying the journey itself.
+                Once you approve the service, our team proceeds
+                with the agreed travel arrangements on your behalf.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* ======================================================
+          TRANSPARENT PRICING
+      ====================================================== */}
+
+      <section className="travel-service-terms">
+
+        <div className="travel-services-container">
+
+          <div className="travel-service-terms-inner">
+
+            <div className="travel-service-terms-icon">
+              <FiFileText />
+            </div>
+
+            <div>
+
+              <span className="travel-kicker">
+                TRANSPARENT PRICING
+              </span>
+
+              <h3>
+                Clear service fees.
+                <br />
+                No surprises.
+              </h3>
+
+              <p>
+                Nylora Safaris provides travel services on a paid
+                basis. Service fees vary depending on the type and
+                complexity of the service requested. Where a service
+                involves third-party charges such as government,
+                embassy, airline or accommodation fees, these costs
+                are separate and will be communicated before
+                proceeding.
               </p>
 
             </div>
@@ -587,7 +735,7 @@ export default function TravelServices() {
             <div>
 
               <span className="travel-kicker">
-                NEED TRAVEL ASSISTANCE?
+                NEED A TRAVEL SERVICE?
               </span>
 
               <h2>
@@ -597,8 +745,9 @@ export default function TravelServices() {
               </h2>
 
               <p>
-                Tell us what you need and our travel team
-                will help you take the next step.
+                Tell us what service you need. Our team will
+                discuss your requirements and provide the
+                applicable service fee before proceeding.
               </p>
 
             </div>
@@ -606,23 +755,40 @@ export default function TravelServices() {
 
             <div className="travel-cta-actions">
 
-              <Link
-                to="/contact"
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                  `Hello Nylora Safaris,
+
+I would like to speak with your travel services team.
+
+Please share the available services, applicable fees, and the next steps.
+
+Thank you.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="travel-cta-primary"
               >
                 Speak With Nylora
                 <FiArrowUpRight />
-              </Link>
+              </a>
+
 
               <a
-                href="tel:+256786349505"
+                href="tel:+256752932498"
                 className="travel-cta-phone"
               >
+
                 <FiPhone />
 
                 <span>
-                  <small>CALL OUR TEAM</small>
+
+                  <small>
+                    CALL OUR TEAM
+                  </small>
+
                   +256 786 349505
+
                 </span>
 
               </a>

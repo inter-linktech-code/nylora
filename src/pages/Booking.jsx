@@ -113,7 +113,7 @@ ${selectedTour?.id || id || "N/A"}
     `.trim();
 
     const whatsappUrl =
-      `https://wa.me/256786349505?text=${encodeURIComponent(message)}`;
+      `https://wa.me/256752932498?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, "_blank");
 
@@ -278,7 +278,7 @@ ${selectedTour?.id || id || "N/A"}
 
               <div>
                 <span>CALL US</span>
-                <a href="tel:+256786349505">
+                <a href="tel:+256752932498">
                   +256 786 349505
                 </a>
               </div>

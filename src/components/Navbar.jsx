@@ -956,7 +956,7 @@ export default function Navbar() {
                 Speak with our safari team
               </small>
 
-              <a href="tel:+256786349505">
+              <a href="tel:+256752932498">
                 +256 786 349505
               </a>
 

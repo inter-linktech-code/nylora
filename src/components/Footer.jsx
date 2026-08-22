@@ -52,7 +52,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="https://wa.me/256786349505"
+              href="https://wa.me/256752932498"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-plan-button"
@@ -120,7 +120,7 @@ export default function Footer() {
             </Link>
 
             <a
-              href="https://wa.me/256786349505"
+              href="https://wa.me/256752932498"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -146,13 +146,13 @@ export default function Footer() {
             </p>
 
             <a
-              href="tel:+256786349505"
+              href="tel:+256752932498"
               className="footer-contact-link"
             >
               <FiPhone />
 
               <span>
-                +256 786 349505
+                +256 752 932498
               </span>
             </a>
 

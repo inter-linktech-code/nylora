@@ -157,7 +157,7 @@ export default function Contact() {
               <div>
                 <span>CALL US</span>
 
-                <a href="tel:+256786349505">
+                <a href="tel:+256752932498">
                   +256 786 349505
                 </a>
 
@@ -179,7 +179,7 @@ export default function Contact() {
                 <span>WHATSAPP</span>
 
                 <a
-                  href="https://wa.me/256786349505"
+                  href="https://wa.me/256752932498"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -298,7 +298,7 @@ export default function Contact() {
                     </p>
 
                     <a
-                      href="https://wa.me/256786349505"
+                      href="https://wa.me/256752932498"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="success-whatsapp"
@@ -963,7 +963,7 @@ export default function Contact() {
                     </span>
 
                     <a
-                      href="https://wa.me/256786349505"
+                      href="https://wa.me/256752932498"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -971,7 +971,7 @@ export default function Contact() {
                       <FiArrowUpRight />
                     </a>
 
-                    <a href="tel:+256786349505">
+                    <a href="tel:+256752932498">
                       +256 786 349505
                     </a>
 
@@ -1013,7 +1013,7 @@ export default function Contact() {
             </p>
 
             <a
-              href="https://wa.me/256786349505"
+              href="https://wa.me/256752932498"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-final-button"
